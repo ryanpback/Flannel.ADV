@@ -73,12 +73,6 @@ function loseHealth(hp, character) {
 
 // ================= Front End ======================
 $(function() {
-	$('#protagButton').click(function(){
-		var damage = fight(protag, goblin);
-		$('.enemyHealth').width($('.enemyHealth').width() - loseHealth(damage, goblin)*100);
-	})
-	$('#enemyButton').click(function(){
-		var damage = fight(goblin, protag);
-		$('.protagHealth').width($('.protagHealth').width() - loseHealth(damage, protag)*100);
-	})
+	//$('#nameStart').fadeIn(2000);
+	// $('#clickStart').delay(1000).fadeIn(2000);
 });

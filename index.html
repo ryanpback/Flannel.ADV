@@ -4,51 +4,43 @@
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/typed.js"></script>
     <script src="js/scripts.js"></script>
     <title></title>
   </head>
   <body>
-    <div class="container">
+    <div id="start" class="container">
       <div class="row">
-        <div class="col-md-12">
-          <header class="jumbotron text-center">
+        <div id="nameStart" class="col-xs-12">
+          <div class="jumbotron text-center">
             <h1>Super Adventure Time</h1>
-          </header>
-          <div class="underline"></div>
+          </div>
+        </div>
+        <div id="clickStart" class="col-xs-12">
+          <div class="jumbotron text-center">
+            <h2><i class="fa fa-angle-right"></i>click anywhere to start</h2>
+          </div>
         </div>
       </div>
     </div>
-    <div id="fight">
+    <div id="story" class="container">
       <div class="row">
-        <div class="col-md-6 maxHealthProtag">
-          <div class="panel protagHealth">
-            <!-- <p>Player Health</p> -->
-          </div>
+        <div class="col-xs-12">
+          <script>
+            $(function(){
+                $(".element").typed({
+                  strings: ["Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B. Blue bottle raw denim activated charcoal waistcoat ugh. Next level hell of you probably haven't heard of them pop-up lo-fi."],
+                  typeSpeed: 5
+                });
+            });
+          </script>
+          <div class="element wrap"></div>
+          <!-- <p>Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B. Blue bottle raw denim activated charcoal waistcoat ugh. Next level hell of you probably haven't heard of them pop-up lo-fi. Vice squid godard, sustainable hell of hexagon bitters banh mi bespoke mumblecore bushwick. Etsy hot chicken tousled, distillery la croix man bun wolf sustainable single-origin coffee franzen gentrify man braid iceland chia. Aesthetic venmo green juice, craft beer small batch umami vape thundercats next level quinoa twee chicharrones tacos. Mumblecore prism fam, paleo raclette fixie chambray mixtape kitsch sartorial godard readymade scenester.</p> -->
         </div>
-        <div class="col-md-6 maxHealthEnemy">
-          <div class="panel enemyHealth">
-          <!-- <p>Enemy Health</p></div> -->
-        </div>
       </div>
-
-
-
-
-
-
-
-      <!-- <div class="row maxHealth">
-        <div class="protagHealth col-md-6"></div>
-        <div class="col-md-6"></div>
-      </div>
-      <button type="button" id="protagButton" class="btn btn-large btn-danger">Fight</button>
-      <div class="row maxHealth">
-        <div class="col-md-6 enemyHealth"></div>
-        <div class="col-md-6"></div>
-      </div>
-        <button type="button" id="enemyButton" class="btn btn-large btn-danger">Fight Back</button>
-      </div> -->
+    </div>
   </body>
 </html>

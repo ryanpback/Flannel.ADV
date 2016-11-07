@@ -1,85 +1,101 @@
 body {
   background-color: black;
   font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: #fff;
 }
 
+#nameStart{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-left: -50%;
+  text-align: center;
+  display: none;
+  padding-bottom: 20px;
+}
+
+#clickStart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -50%;
+  text-align: center;
+  display: none;
+}
+
+#clickStart h2 {
+  transform: translate(0, -50%);
+  margin-top: 0;
+}
+
+#nameStart h1 {
+  transform: translate(0, -50%);
+}
 .jumbotron {
   background-color: transparent;
   color:#fff;
   letter-spacing: 15px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+  margin-bottom: 20px;
 }
 
-.underline {
-  border-bottom: 4px solid #fff;
-  margin-bottom: 30px;
+i {
+  transform: translate(0, 10%);
 }
 
-.maxHealthProtag, .maxHealthEnemy {
-  background-color: #d3d3d3;
-  border: 3px solid white;
-  height: 16px;
-  padding: 0px;
-  width: 156px;
+#story {
+  margin-top: 200px;
+  border: 5px solid #fff;
 }
 
-.protagHealth, .enemyHealth {
-  height: 10px;
-  background-color:red;
-  min-width: 0px;
-  padding: 0px;
-  width: 150px;
+#story .col-xs-12 {
+  padding: 30px;
+  line-height: 40px;
 }
 
-.protagHealth {
-  position: fixed;
+.element {
+  display: inline;
+  font-size: 40px;
 }
 
-.maxHealthProtag {
-  position: fixed;
-  margin-left: 37px;
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+  display: inline-block;
 }
 
-.maxHealthEnemy {
-  position: fixed;
-  right: 17px;
-}
-.enemyHealth {
-  position: fixed;
-  right: 20px;
+.wrap{
+	max-width: 600px;
+	margin:150px auto;
 }
 
+.type-wrap{
+	margin:10px auto;
+	padding:20px;
+	background:#f0f0f0;
+	border-radius:5px;
+	border:#CCC 1px solid;
+}
 
-
-@media screen and (min-width: 768px){
-  .maxHealthProtag, .maxHealthEnemy {
-    background-color: #d3d3d3;
-    border: 3px solid white;
-    height: 26px;
-    padding: 0px;
-    width: 306px;
-    position: fixed;
-  }
-
-  .protagHealth, .enemyHealth {
-    height:20px;
-    background-color:red;
-    min-width: 0px;
-    padding: 0px;
-    width: 300px;
-    position: fixed;
-  }
-
-  .maxHealthProtag {
-    margin-left: 37px;
-  }
-
-  .maxHealthEnemy {
-    right: 17px;
-  }
-  .enemyHealth {
-    right: 20px;
-  }
-
+.links{
+	margin:20px 0;
+	font-size: 0.75em;
+	text-align: center;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
