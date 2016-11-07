@@ -73,6 +73,22 @@ function loseHealth(hp, character) {
 
 // ================= Front End ======================
 $(function() {
-	//$('#nameStart').fadeIn(2000);
+	var introText = "<p>Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B.</p><p>Will you help? <br><span class='yes'>yes</span><span class='no'>no</span></p>";
+	// $('#nameStart').fadeIn(2000);
 	// $('#clickStart').delay(1000).fadeIn(2000);
+
+	$('body').click(function(){
+		$('#start').fadeOut(1000);
+		$('#story').delay(1000).fadeIn(2000);
+		$("#storyText").typed({
+			strings: [introText],
+			typeSpeed: 0,
+			startDelay: 1500
+		});
+		$('body').off('click');
+		$('body').on('click', '.yes', function(){
+			$('#story').fadeOut(1000);
+			$('#characterSelect').delay(1000).fadeIn(1000);
+		});
+	});
 });

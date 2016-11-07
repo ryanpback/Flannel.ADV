@@ -12,7 +12,7 @@
     <title></title>
   </head>
   <body>
-    <div id="start" class="container">
+    <section id="start" class="container">
       <div class="row">
         <div id="nameStart" class="col-xs-12">
           <div class="jumbotron text-center">
@@ -25,22 +25,35 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id="story" class="container">
+    </section>
+    <section id="story" class="container">
       <div class="row">
         <div class="col-xs-12">
-          <script>
-            $(function(){
-                $(".element").typed({
-                  strings: ["Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B. Blue bottle raw denim activated charcoal waistcoat ugh. Next level hell of you probably haven't heard of them pop-up lo-fi."],
-                  typeSpeed: 5
-                });
-            });
-          </script>
-          <div class="element wrap"></div>
-          <!-- <p>Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B. Blue bottle raw denim activated charcoal waistcoat ugh. Next level hell of you probably haven't heard of them pop-up lo-fi. Vice squid godard, sustainable hell of hexagon bitters banh mi bespoke mumblecore bushwick. Etsy hot chicken tousled, distillery la croix man bun wolf sustainable single-origin coffee franzen gentrify man braid iceland chia. Aesthetic venmo green juice, craft beer small batch umami vape thundercats next level quinoa twee chicharrones tacos. Mumblecore prism fam, paleo raclette fixie chambray mixtape kitsch sartorial godard readymade scenester.</p> -->
+          <div id="storyText" class="element wrap"></div>
+        </div>
+        <div class="decision col-xs-12">
+          <p>Will you help? <br><span class='yes'>yes</span><span class='no'>no</span></p>
+        </div>
+      </div><!-- row -->
+    </section>
+    <section id="characterSelect">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <script>
+              $(function(){
+                  $(".character-element").typed({
+                    strings: ["<p>What is your name?</p><div class='col-xs-12'><form><div class='form-group'><input type='text' name='name' style='padding-left:10px;'><button type='submit' name='button' style=''>enter</button></div></form></div>"],
+                    typeSpeed: 0,
+                    showCursor: false
+                  });
+              });
+            </script>
+            <div class="character-element element wrap">
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>
