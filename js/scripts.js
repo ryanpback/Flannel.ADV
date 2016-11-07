@@ -4,10 +4,11 @@ function Character(name, maxHealth, health, strength, inventory) {
   this.maxHealth = maxHealth;
 	this.health = health;
   this.strength = strength;
-  this.inventory = [];
+  this.inventory = {};
 }
 
-var goblin = new Character("Goblin", 15, 4);
+character.inventory["sword"] = 5;
+var goblin = new Character("Goblin", 15, 15, 4);
 
 // ================= Items ======================
 function Weapon(damage) {
@@ -89,7 +90,8 @@ $(function() {
 		$('.enemyHealth').width($('.enemyHealth').width() - loseHealth(damage, goblin)*100);
 	})
 
-	var protag = new Character("Kaeric", 30, 6);
+	var protag = new Character("Kaeric", 30, 30, 6);
+
 	$('#enemyButton').click(function(){
 		var damage = fight(goblin, protag);
 		$('.protagHealth').width($('.protagHealth').width() - loseHealth(damage, protag)*100);
