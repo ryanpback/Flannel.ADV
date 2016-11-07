@@ -1,24 +1,20 @@
 // ================= Characters ======================
-function Character(name, turn, maxHealth, health, strength, inventory) {
+function Character(name, maxHealth, health, strength, inventory) {
 	this.name = name;
-	this.turn = turn;
   this.maxHealth = maxHealth;
 	this.health = health;
   this.strength = strength;
   this.inventory = [];
 }
+var protag = new Character("Kaeric", 30, 30, 6);
+var enemies = [];
 
 
-var potion = new Item(potion, 30);
-var potion = new Item(blank)
-
-this.inventory.push("", 0);
-
-console.log(this.inventory);
 
 
 // character.inventory["sword"] = 5;
 var goblin = new Character("Goblin", 15, 15, 4);
+enemies.push(goblin);
 
 // ================= Items ======================
 function Weapon(damage) {
@@ -46,75 +42,58 @@ protag.inventory.push(buckler);
 
 Character.prototype.attack = function() {
 	if (this.inventory[0] === "")
-	return ((Math.round(Math.random() * 5) + this.strength) + this.inventory[0].damage) -5;
+	return ((Math.round(Math.random() * 5) + this.strength);
 }
-else if (this. inventory[0] === 5) {
+	else if (this.inventory[0] === "sword") {
+		return ((Math.round(Math.random() * 5) + this.strength) + this.inventory[0].value) -5;
+	}
+}
 
-}
 
 Character.prototype.enemyAttack = function() {
-	return ((Math.round(Math.random() * 8) + this.strength) + this.inventory[0].damage) -8;
+	if (this.inventory[0].name === "")
+	return ((Math.round(Math.random() * 8) + this.strength);
+}
+	else if (this.inventory[0].name === "sword") {
+		return ((Math.round(Math.random() * 8) + this.strength) + this.inventory[0].value) -8;
+	}
 }
 
 // Make prototype
 Character.prototype.defense = function() {
-	return this.inventory[1].defense;
+	if (this.inventory[1].name === ""){
+		return 0;
+	}
+	else if (this.inventory[1].name === "shield") {
+		return this.inventory[1].value;
+	}
 }
 
 // Make prototype
 Character.prototype.fight = function(enemy) {
 	enemy.health = attack(this) - defense(enemy);
 	if(enemy.health < 1) {
+		index++;
     return "win";
 	}
 	this.health = enemyAttack(enemy) - defense(this);
-	if(enemy.health < 1) {
+	if(this.health < 1) {
+		index++;
     return "die";
 	}
-}
-
-
-		// fight(goblin, this);
-  	// var damage = attack(this) - defense(enemy);
-
-//   else {
-//   	var damage = attack(this);
-//   }
-// 	if(damage > 0) {
-//   	enemy.health[1] = enemy.health[1] - damage;
-//   }
-// 	else if(damage <= 0) {
-// 		damage = 0;
-// 	}
-// 	return damage;
-// }
-
-// Character.protoype.loseHealth = function(hp) {
-// 	return (hp / character.health[0]);
-// }
-
-
-// Make prototype
-Character.prototype.instance = function(enemy) {
-	while(this.health[1] > 0 && enemy.health[1] > 0){
-  	fight(this, enemy);
-    if(enemy.health[1] < 1) {
-      return "win";
-    }
-    fight(enemy, this);
-    if(this.health[1] < 1) {
-      return "die";
-    }
-    console.log(this.name + ": " + this.health[1]);
-    console.log(enemy.name + ": " + enemy.health[1])
-  }
+	$("#prompt").show();
 }
 
 // ================= Front End ======================
 $(function() {
-	$('#protagButton').click(function(){
-		var damage = fight(protag, goblin);
-		$('.enemyHealth').width($('.enemyHealth').width() - loseHealth(damage, goblin)*100);
+	var index = 0;
+	$('#fightButton').click(function(){
+		fight(protag, enemies[index]);
+		$('#prompt').hide();
+	})
+
+	$('#runButton').click(function(){
+		////Do whatever
 	})
 
 	var protag = new Character("Kaeric", 30, 30, 6);
