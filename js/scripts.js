@@ -1,13 +1,23 @@
 // ================= Characters ======================
-function Character(name, maxHealth, health, strength, inventory) {
+function Character(name, turn, maxHealth, health, strength, inventory) {
 	this.name = name;
+	this.turn = turn;
   this.maxHealth = maxHealth;
 	this.health = health;
   this.strength = strength;
-  this.inventory = {};
+  this.inventory = [];
 }
 
-character.inventory["sword"] = 5;
+
+var potion = new Item(potion, 30);
+var potion = new Item(blank)
+
+this.inventory.push("", 0);
+
+console.log(this.inventory);
+
+
+// character.inventory["sword"] = 5;
 var goblin = new Character("Goblin", 15, 15, 4);
 
 // ================= Items ======================
@@ -19,12 +29,14 @@ function Shield(defense) {
   this.defense = defense;
 }
 
-function Item(value) {
+function Item(name, value) {
+	this.name = name;
 	this.value = value;
 }
 
-var sword = new Weapon(5);
-var buckler = new Shield(5);
+var sword = new Item(sword, 5);
+var buckler = new Item(buckler, 5);
+var potion = new Item(potion, 30);
 
 protag.inventory.push(sword);
 goblin.inventory.push(sword);
@@ -32,53 +44,68 @@ protag.inventory.push(buckler);
 
 // ================= Fight Functions ======================
 
-// Make prototype
-function attack(character) {
-	return ((Math.round(Math.random() * 5) + character.strength) + character.inventory[0].damage) -5;
+Character.prototype.attack = function() {
+	if (this.inventory[0] === "")
+	return ((Math.round(Math.random() * 5) + this.strength) + this.inventory[0].damage) -5;
+}
+else if (this. inventory[0] === 5) {
+
 }
 
-function enemyAttack(character) {
-	return ((Math.round(Math.random() * 8) + character.strength) + character.inventory[0].damage) -8;
-}
-
-// Make prototype
-function defense(character) {
-	return character.inventory[1].defense;
+Character.prototype.enemyAttack = function() {
+	return ((Math.round(Math.random() * 8) + this.strength) + this.inventory[0].damage) -8;
 }
 
 // Make prototype
-function fight(character, enemy) {
-	if(enemy.inventory[1]) {
-  	var damage = attack(character) - defense(enemy);
-  }
-  else {
-  	var damage = attack(character);
-  }
-	if(damage > 0) {
-  	enemy.health[1] = enemy.health[1] - damage;
-  }
-	else if(damage <= 0) {
-		damage = 0;
+Character.prototype.defense = function() {
+	return this.inventory[1].defense;
+}
+
+// Make prototype
+Character.prototype.fight = function(enemy) {
+	enemy.health = attack(this) - defense(enemy);
+	if(enemy.health < 1) {
+    return "win";
 	}
-	return damage;
+	this.health = enemyAttack(enemy) - defense(this);
+	if(enemy.health < 1) {
+    return "die";
+	}
 }
 
-function loseHealth(hp, character) {
-	return (hp / character.health[0]);
-}
+
+		// fight(goblin, this);
+  	// var damage = attack(this) - defense(enemy);
+
+//   else {
+//   	var damage = attack(this);
+//   }
+// 	if(damage > 0) {
+//   	enemy.health[1] = enemy.health[1] - damage;
+//   }
+// 	else if(damage <= 0) {
+// 		damage = 0;
+// 	}
+// 	return damage;
+// }
+
+// Character.protoype.loseHealth = function(hp) {
+// 	return (hp / character.health[0]);
+// }
+
 
 // Make prototype
-function instance(character, enemy) {
-	while(character.health[1] > 0 && enemy.health[1] > 0){
-  	fight(character, enemy);
+Character.prototype.instance = function(enemy) {
+	while(this.health[1] > 0 && enemy.health[1] > 0){
+  	fight(this, enemy);
     if(enemy.health[1] < 1) {
       return "win";
     }
-    fight(enemy, character);
-    if(character.health[1] < 1) {
+    fight(enemy, this);
+    if(this.health[1] < 1) {
       return "die";
     }
-    console.log(character.name + ": " + character.health[1]);
+    console.log(this.name + ": " + this.health[1]);
     console.log(enemy.name + ": " + enemy.health[1])
   }
 }
