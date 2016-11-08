@@ -16,19 +16,21 @@ function Item(itemName, itemStrength) {
 var enemies = [];
 var nonItem = new Item("", 0);
 var sword = new Item("sword", 5);
-var buckler = new Item("buckler", 5);
-var potion = new Item("potion", 30);
-var goblin = new Character("Goblin", 15, 15, 4);
-var monster = new Character("Monster", 20, 20, 6);
-var corgi = new Character("Corgi", 25, 25, 7);
+var fixiebike = new Item("Fixie-bike", 5);
+var nitrocoldbrew = new Item("Nitro coldbrew", 30);
+var fiftyShades = new Item("Fifty Shades of Grey Book", 5)
+var homelessdude = new Character("Homeless Dude", 20, 20, 4);
+var vegangirl = new Character("Wannabe Vegan Girl", 25, 25, 6);
+var aholebouncer = new Character("Asshole Bouncer", 60, 60, 7);
+var hangman = ["J", "A", "Z", "Z"];
 
 ////////////Populate enemies and thier inventory/////////////
-enemies.push(goblin);
-enemies.push(monster);
-enemies.push(corgi);
-goblin.inventory.push(nonItem, nonItem, nonItem);
-monster.inventory.push(sword, nonItem, nonItem);
-corgi.inventory.push(sword, buckler, nonItem);
+enemies.push(homelessdude);
+enemies.push(vegangirl);
+enemies.push(aholebouncer);
+homelessdude.inventory.push(nonItem, nonItem, nonItem);
+vegangirl.inventory.push(sword, nonItem, nonItem);
+aholebouncer.inventory.push(sword, fiftyShades, nonItem);
 
 /////////Populate inventory for character///////////
 ///////Remove addBlanks after ui/back-end merge///////////
@@ -37,16 +39,16 @@ addBlanks = function(character) {
 	character.inventory.push(nonItem);
 	character.inventory.push(nonItem);
 }
-
+//make prototype
 addItem = function(character, item) {
 	if (item === "sword") {
 		charcter.inventory.push(sword);
 	}
-	else if (item === "buckler") {
-		charcter.inventory.push(buckler);
+	else if (item === "Fixie-bike") {
+		charcter.inventory.push(fixiebike);
 	}
-	else if (item === "potion") {
-		charcter.inventory.push(potion);
+	else if (item === "Nitro coldbrew") {
+		charcter.inventory.push(nitrocoldbrew);
 	}
 	else if (item === "nothing") {
 		charcter.inventory.push("");
@@ -77,7 +79,10 @@ Character.prototype.defense = function() {
 	if (this.inventory[1].itemName === ""){
 		return 0;
 	}
-	else if (this.inventory[1].itemName === "buckler") {
+	else if (this.inventory[1].itemName === "Fixie-bike") {
+		return this.inventory[1].itemStrength;
+	}
+	else if (this.inventory[1].itemName === "Fifty Shades of Grey Book") {
 		return this.inventory[1].itemStrength;
 	}
 }
@@ -86,7 +91,7 @@ Character.prototype.fight = function(enemy) {
 	enemy.health -= this.attack() + enemy.defense();
 	console.log("Enemy health: " + enemy.health);
 	if(enemy.health < 1) {
-		this.health = 15;
+		this.health = this.maxHealth;
    return "win";
 	}
 	this.health -= enemy.enemyAttack() + this.defense();
@@ -96,16 +101,72 @@ Character.prototype.fight = function(enemy) {
 	}
 }
 
+///==================Puzzle Functions===============
+
+guessLetter	= function(letters) {
+	for(var index = 0; index < hangman.length; index++) {
+ 		if(letters === hangman[index]) {
+	 		return index;
+ 		}
+	}
+		return "Incorrect"
+};
+
+// var head = document.getElementById("#hangman-images#head");
+// head.style.left = x + "4360px";
+// head.style.top = y + "43500px";
+//
+// var body = document.getElementById("body");
+// body.style.left = x + "60px";
+// body.style.top = y + "300px";
+//
+// var leftLeg = document.getElementById("leftLeg");
+// leftLeg.style.left = x + "60px";
+// leftLeg.style.top = y + "300px";
+//
+// var rightLeg = document.getElementById("rightLeg");
+// rightLeg.style.left = x + "60px";
+// rightLeg.style.top = y + "300px";
+//
+// var leftArm = document.getElementById("leftArm");
+// leftArm.style.left = x + "60px";
+// leftArm.style.top = y + "300px";
+//
+// var rightArm = document.getElementById("rightArm");
+// rightArm.style.left = x + "60px";
+// rightArm.style.top = y + "300px";
+
+
+
 // ================= Front End ======================
 $(function() {
 	var protag = {};
 	var index = 0;
-	$("form").submit(function(event) {
+	$("form#userName").submit(function(event) {
 		event.preventDefault();
 		var playerName = $("input#playerName").val();
 		protag = new Character(playerName, 30, 30, 6);
 		addBlanks(protag);
 		console.log(protag);
+	});
+
+	$("form#letterPuzzle").submit(function(event) {
+		event.preventDefault();
+		var letterGuess = $("input#playerGuess").val().toUpperCase();
+
+		var guessResult = guessLetter(letterGuess);
+		for (var idx = 0; idx < 4; idx++) {
+			if (guessResult === idx) {
+				if(guessResult === 2) {
+					$(".correct-answers span3").text(letterGuess);
+				}
+				$(".correct-answers span" + idx).text(letterGuess);
+				$("input#playerGuess").val("");
+			}
+		}
+		if (guessResult === "Incorrect") {
+			$("#incorrect-answers span" + idx).append(letterGuess);
+		}
 	});
 
 	//

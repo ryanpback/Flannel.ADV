@@ -1,4 +1,61 @@
 body {
   background-color: black;
   font-family: 'VT323', monospace;
+  color: white;
+}
+.underline {
+  border-bottom: 2px solid white;
+  width: 30px;
+  height: 20px;
+  margin: 20px 0 20px 0;
+  letter-spacing: 10px;
+  display: inline-block;
+}
+
+.outputBoxes {
+  margin-top: 80px;
+  height: 700px;
+
+}
+
+#hangMan {
+  position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+#head {
+  position: relative;
+    left: 7px;
+    bottom: 502px;
+}
+
+#body {
+  position: relative;
+    left: 55px;
+    bottom: 527px;
+}
+
+#leftLeg {
+  position: relative;
+    right: 37px;
+    bottom: 842px;
+}
+
+#rightLeg {
+  position: relative;
+    left: 65px;
+    bottom: 990px;
+}
+
+#leftArm {
+  position: relative;
+    right: 40px;
+    bottom: 695px;
+}
+
+#rightArm {
+  position: relative;
+  left: 70px;
+  bottom: 842px;
 }

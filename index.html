@@ -10,12 +10,46 @@
     <title></title>
   </head>
   <body>
-    <form>
-      <div class="form-group">
-        <input type="text" class="form-control" id="playerName" placeholder="Name">
-      </div>
-    <button type="submit" class="btn btn-info" id="submitButton">Submit</button>
-    </form>
-    <button type="button" class="btn btn-danger" id="fightButton">Fight</button>
+    <div class="container">
+      <form id="userName">
+        <div class="form-group">
+          <input type="text" class="form-control" id="playerName" placeholder="Name">
+        </div>
+      <button type="submit" class="btn btn-info" id="submitButton">Submit</button>
+      </form>
+      <button type="button" class="btn btn-danger" id="fightButton">Fight</button>
+      <form id="letterPuzzle">
+        <div class="form-group">
+          <input type="text" class="form-control" id="playerGuess" placeholder="Guess a Letter">
+        </div>
+      <button type="submit" class="btn btn-info" id="checkLetter">Check Letter</button>
+      </form>
+      <div class="row">
+        <div class="col-md-6 outputBoxes">
+          <div class="user-answers">
+            <p class="underline correct-answers"><span0></span0></p>
+            <p class="underline correct-answers"><span1></span1></p>
+            <p class="underline correct-answers"><span2></span2></p>
+            <p class="underline correct-answers"><span3></span3></p>
+            <p id="incorrect-answers"></p>
+          </div>
+        </div>
+        <div class="col-md-6 outputBoxes">
+          <div class="hang-man">
+              <p id="hangMan-images">
+                <p><img id="hangMan" src="img/hangman.png"></p>
+                <p><img id="head" src="img/head.png"></p>
+                <p><img id="body" src="img/body.png"></p>
+                <p><img id="leftArm" src="img/leftExtension.png"></p>
+                <p><img id="rightArm" src="img/rightExtension.png"></p>
+                <p><img id="leftLeg" src="img/leftExtension.png"></p>
+                <p><img id="rightLeg" src="img/rightExtension.png"></p>
+              </p>
+          </div>
+        </div>
+      </div> <!-- .row -->
+    </div>
+      <!-- </div> id="correct-answers"> -->
+    </div>
   </body>
 </html>
