@@ -73,28 +73,24 @@ function loseHealth(hp, character) {
 
 // ================= Front End ======================
 $(function() {
-	var introText = "<p>Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B.</p><br><br><p>Will you help? <br><span class='yes'>yes</span><span class='no'>no</span></p>";
+	var introText = "<p>Hipster: the embodiment of postmodernism as a spent force, revealing what happens when pastiche and irony exhaust themselves as aesthetics.</p><br>";
 	var name = "";
+	var wakeUpText = "<p>You wake up,^1000 mattress on the floor,^1000 exhausted from a long night of cross stitching and updating your etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night. The phone rings.^1000 It's your friend Harlow on the line.</p>";
+	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000 You've probably never heard of them, but it's an indie synth band from Iceland. Starts at 7:30 at 'Club Foot.'^1000 Hope to see you there!</p>"
 	$('#nameStart').fadeIn(2000);
 	$('#clickStart').delay(1000).fadeIn(2000);
 
 	$('body').click(function(){
 		$('#start').fadeOut(1000);
-		$('#story').delay(1000).fadeIn(2000);
+		$('#story').delay(1000).fadeIn(1000);
 		$("#storyText").typed({
 			strings: [introText],
-			typeSpeed: 0,
+			typeSpeed: 50,
 			startDelay: 1500
 		});
 		$('body').off('click');
-		$('body').on('click', '.yes', function(){
-			$('#story').fadeOut(1000);
-			$('#characterSelect').delay(1000).fadeIn(1000);
-		});
-		$('body').on('click', '.no', function(){
-			$('#story').fadeOut(1000);
-			$('#youSuck').delay(1000).fadeIn(1000);
-		});
+		$('#story').delay(14000).fadeOut(2000);
+		$('#characterSelect').delay(18000).fadeIn(1000);
 	});
 	$('body').on('submit', 'form',function(event) {
 		event.preventDefault();
@@ -103,21 +99,46 @@ $(function() {
 		$('#maleFemale').delay(1000).fadeIn(1000);
 		$("#genderText").typed({
 			strings: ["Hello, " + name, "^1000Are you male or female?"],
-			typeSpeed: 0,
+			typeSpeed: 50,
 			startDelay: 1500
 		});
-		$('#genderImages').delay(2000).fadeIn(1000);
+		$('#genderImages').delay(4000).fadeIn(1000);
 		$("#male").typed({
 			strings: ["male"],
-			typeSpeed: 0,
-			startDelay: 5500,
+			typeSpeed: 50,
+			startDelay: 7500,
 			showCursor: false
 		});
 		$("#female").typed({
 			strings: ["female"],
-			typeSpeed: 0,
-			startDelay: 6000,
+			typeSpeed: 50,
+			startDelay: 8400,
 			showCursor: false
+		});
+		$('body').on('click', '.outline', function() {
+			$('#maleFemale').fadeOut(1000);
+			$('#spectrum').delay(2000).fadeIn(1000);
+			$(".spectrumText").typed({
+				strings: ["<p>Don't you know that gender is a spectrum?</p>^500", ""],
+				typeSpeed: 50,
+				startDelay: 2200,
+				showCursor: false
+			});
+			$('#spectrum').delay(6500).hide();
+			$('#wakeUp').delay(10000).fadeIn(1000);
+			$('.wakeUpText').typed({
+		    strings: [wakeUpText],
+		    typeSpeed: 50,
+				startDelay: 10100,
+		    showCursor: false
+		  });
+	// 	  $('.wakeUpText').delay(21000).fadeOut(1000);
+	// 	  $('.phoneText').typed({
+	// 	    strings: [phoneText],
+	// 	    typeSpeed: 50,
+	// 	    startDelay: 22500,
+	// 			showCursor: false
+	// 	  });
 		});
 	});
 });

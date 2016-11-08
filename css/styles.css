@@ -43,7 +43,7 @@ i {
   transform: translate(0, 10%);
 }
 
-#story, #characterSelect, #youSuck, #maleFemale {
+.storyLine {
   position: fixed;
   top: 40%;
   left: 50%;
@@ -53,7 +53,7 @@ i {
   font-size: 36px;
 }
 
-#story {
+.box {
   border: 5px solid #fff;
 }
 
@@ -66,6 +66,11 @@ i {
 .decision {
   display: none;
   font-size: 36px;
+}
+
+.yes:hover, .no:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 .no {
   padding-left: 15px;
@@ -81,6 +86,7 @@ input:focus {
 
 button {
   background-color: #000;
+  outline-color: #fff;
 }
 
 button:hover {
@@ -95,10 +101,12 @@ button:hover {
   margin: 10px 25px;
 }
 
+
+
 .josh {
   width: 50px;
   height: 115px;
-  background: url('../img/josh.png') -1520px -420px;
+  background: url('../img/josh.png') -1518px -423px;
   margin-top: 20px;
 }
 
@@ -113,6 +121,11 @@ button:hover {
   border-radius: 10px;
   display: inline-block;
   height: 160px;
+}
+
+.outline:hover {
+  background-color: rgba(255,255,255,.2);
+  cursor: pointer;
 }
 
 #male, #female {
@@ -164,4 +177,12 @@ button:hover {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+}
+
+.skip {
+  display: none;
+}
+
+.show {
+  display: default;
 }
