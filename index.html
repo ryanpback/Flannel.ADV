@@ -10,45 +10,12 @@
     <title></title>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <header class="jumbotron text-center">
-            <h1>Super Adventure Time</h1>
-          </header>
-          <div class="underline"></div>
-        </div>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="playerName" placeholder="Name">
       </div>
-    </div>
-    <div id="fight">
-      <div class="row">
-        <div class="col-md-6 maxHealthProtag">
-          <div class="panel protagHealth">
-            <!-- <p>Player Health</p> -->
-          </div>
-        </div>
-        <div class="col-md-6 maxHealthEnemy">
-          <div class="panel enemyHealth">
-          <!-- <p>Enemy Health</p></div> -->
-        </div>
-      </div>
-
-
-
-
-
-
-
-      <!-- <div class="row maxHealth">
-        <div class="protagHealth col-md-6"></div>
-        <div class="col-md-6"></div>
-      </div>
-      <button type="button" id="protagButton" class="btn btn-large btn-danger">Fight</button>
-      <div class="row maxHealth">
-        <div class="col-md-6 enemyHealth"></div>
-        <div class="col-md-6"></div>
-      </div>
-        <button type="button" id="enemyButton" class="btn btn-large btn-danger">Fight Back</button>
-      </div> -->
+    <button type="submit" class="btn btn-info" id="submitButton">Submit</button>
+    </form>
+    <button type="button" class="btn btn-danger" id="fightButton">Fight</button>
   </body>
 </html>
