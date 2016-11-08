@@ -40,17 +40,45 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-center">
-            <script>
-              $(function(){
-                  $(".character-element").typed({
-                    strings: ["<p>What is your name?</p><div class='col-xs-12'><form><div class='form-group'><input type='text' name='name' style='padding-left:10px;'><button type='submit' name='button' style=''>enter</button></div></form></div>"],
-                    typeSpeed: 0,
-                    showCursor: false
-                  });
-              });
-            </script>
+            <p>What is your name?</p>
+            <div class='col-xs-12'>
+              <form>
+                <div class='form-group'>
+                  <input id='name' type='text' name='name'>
+                  <button type='submit'>enter</button>
+                </div>
+              </form>
+            </div>
             <div class="character-element element wrap">
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="maleFemale">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <div id="genderText" class="element wrap"></div>
+            <div id="genderImages">
+              <div class="outline outline-josh">
+                <div class="josh"></div>
+                <div id="male" class="element wrap"></div>
+              </div>
+              <div class="outline">
+                <div class="misaki"></div>
+                <div id="female" class="element wrap"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="youSuck">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <p>Wow.... You suck</p>
           </div>
         </div>
       </div>

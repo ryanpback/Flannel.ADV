@@ -73,9 +73,10 @@ function loseHealth(hp, character) {
 
 // ================= Front End ======================
 $(function() {
-	var introText = "<p>Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B.</p><p>Will you help? <br><span class='yes'>yes</span><span class='no'>no</span></p>";
-	// $('#nameStart').fadeIn(2000);
-	// $('#clickStart').delay(1000).fadeIn(2000);
+	var introText = "<p>Enamel pin humblebrag occupy, locavore af asymmetrical letterpress PBR&amp;B.</p><br><br><p>Will you help? <br><span class='yes'>yes</span><span class='no'>no</span></p>";
+	var name = "";
+	$('#nameStart').fadeIn(2000);
+	$('#clickStart').delay(1000).fadeIn(2000);
 
 	$('body').click(function(){
 		$('#start').fadeOut(1000);
@@ -89,6 +90,34 @@ $(function() {
 		$('body').on('click', '.yes', function(){
 			$('#story').fadeOut(1000);
 			$('#characterSelect').delay(1000).fadeIn(1000);
+		});
+		$('body').on('click', '.no', function(){
+			$('#story').fadeOut(1000);
+			$('#youSuck').delay(1000).fadeIn(1000);
+		});
+	});
+	$('body').on('submit', 'form',function(event) {
+		event.preventDefault();
+		name = $('input#name').val();
+		$('#characterSelect').fadeOut(1000);
+		$('#maleFemale').delay(1000).fadeIn(1000);
+		$("#genderText").typed({
+			strings: ["Hello, " + name, "^1000Are you male or female?"],
+			typeSpeed: 0,
+			startDelay: 1500
+		});
+		$('#genderImages').delay(2000).fadeIn(1000);
+		$("#male").typed({
+			strings: ["male"],
+			typeSpeed: 0,
+			startDelay: 5500,
+			showCursor: false
+		});
+		$("#female").typed({
+			strings: ["female"],
+			typeSpeed: 0,
+			startDelay: 6000,
+			showCursor: false
 		});
 	});
 });

@@ -43,14 +43,18 @@ i {
   transform: translate(0, 10%);
 }
 
-#story {
+#story, #characterSelect, #youSuck, #maleFemale {
   position: fixed;
   top: 40%;
   left: 50%;
-  border: 5px solid #fff;
   min-height: 324px;
   transform: translate(-50%,0);
-  /*display: none;*/
+  display: none;
+  font-size: 36px;
+}
+
+#story {
+  border: 5px solid #fff;
 }
 
 #story .col-xs-12 {
@@ -58,14 +62,6 @@ i {
   line-height: 40px;
 }
 
-#characterSelect {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  min-height: 324px;
-  transform: translate(-50%,0);
-  display: none;
-}
 
 .decision {
   display: none;
@@ -91,16 +87,46 @@ button:hover {
   background-color: #555;
 }
 
+#genderImages {
+  margin-bottom: 30px;
+}
 
+.misaki, .josh {
+  margin: 10px 25px;
+}
 
+.josh {
+  width: 50px;
+  height: 115px;
+  background: url('../img/josh.png') -1520px -420px;
+  margin-top: 20px;
+}
 
+.misaki {
+  width: 50px;
+  height: 130px;
+  background: url('../img/misaki.png') -505px -810px
+}
 
+.outline {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: inline-block;
+  height: 160px;
+}
 
+#male, #female {
+  position: absolute;
+  top: 210px;
+}
 
+#male {
+  margin-left: -30px;
+}
 
-
-
-
+#female {
+  margin-left: -44px;
+}
 
 .element, .element p {
   display: inline;
@@ -134,4 +160,8 @@ button:hover {
 
 ::selection {
   background: #3bc4f9; /* WebKit/Blink Browsers */
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
 }
