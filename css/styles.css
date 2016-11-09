@@ -43,7 +43,7 @@ i {
   transform: translate(0, 10%);
 }
 
-.storyLine {
+.introText {
   position: fixed;
   top: 40%;
   left: 50%;
@@ -60,20 +60,6 @@ i {
 #story .col-xs-12 {
   padding: 30px;
   line-height: 40px;
-}
-
-
-.decision {
-  display: none;
-  font-size: 36px;
-}
-
-.yes:hover, .no:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-.no {
-  padding-left: 15px;
 }
 
 input {
@@ -97,20 +83,18 @@ button:hover {
   margin-bottom: 30px;
 }
 
-.misaki, .josh {
+.male, .female {
   margin: 10px 25px;
 }
 
-
-
-.josh {
+.male {
   width: 50px;
   height: 115px;
   background: url('../img/josh.png') -1518px -423px;
   margin-top: 20px;
 }
 
-.misaki {
+.female {
   width: 50px;
   height: 130px;
   background: url('../img/misaki.png') -505px -810px
@@ -141,6 +125,198 @@ button:hover {
   margin-left: -44px;
 }
 
+.josh {
+  position: absolute;
+  right:200px;
+  background-image: url("../img/bigJosh.png");
+  display: none;
+}
+
+.joshFight {
+  width: 215px;
+  height: 385px;
+  bottom: 0;
+  background-position: -335px 0;
+}
+
+.joshPhone {
+  width: 187px;
+  height: 385px;
+  bottom: -5px;
+  background-position: -815px -390px;
+}
+
+.joshNormal {
+  width: 165px;
+  height: 385px;
+  bottom: 0;
+  background-position: -1165px 0;
+}
+
+.joshBike {
+  width: 215px;
+  height: 385px;
+  bottom: -10px;
+  background-position: -335px 0;
+}
+
+.misaki {
+  position: absolute;
+  right:200px;
+  background-image: url('../img/misakiBig.png');
+  display: none;
+}
+
+.misakiPhone {
+  width:180px;
+  height:385px;
+  bottom: 0;
+  background-position: -1270px 0;
+}
+
+.misakiNormal {
+  width: 191px;
+  height: 385px;
+  background-position: -1077px 0;
+  bottom: 0;
+}
+.misakiFight {
+  width: 207px;
+  height: 385px;
+  background-position: -493px 0;
+  bottom: -10px;
+}
+
+.misakiBike {
+  width: 220px;
+  height: 385px;
+  background-position: -280px 0;
+  bottom: -13px;
+}
+
+.otherChar {
+  position: absolute;
+  left:100px;
+  display: none;
+}
+
+.harlow {
+  width: 225px;
+  height: 450px;
+  bottom: -36px;
+  background-image: url("../img/harlow.png");
+  background-position: -210px -450px;
+  transform: scale(.85);
+}
+
+.bum {
+  width: 196px;
+  height: 472px;
+  bottom: -36px;
+  background-image: url("../img/bum.png");
+  background-position: 0;
+  transform: scale(.85);
+}
+
+.bikeGuy {
+  width: 290px;
+  height: 468px;
+  background-position: 0;
+  background-image: url("../img/bikeGuy.png");
+  transform: scale(.85);
+  bottom: -36px;
+}
+
+.ai {
+  width: 157px;
+  height: 376px;
+  background-position: -790px -377px;
+  background-image: url("../img/ai.png");
+  bottom: 0;
+}
+
+.veganPoser {
+  width: 172px;
+  height: 377px;
+  background-position: 0;
+  background-image: url("../img/veganPoser.png");
+  bottom: 0;
+}
+
+.bouncer {
+  width: 480px;
+  height: 455px;
+  background-position: -86px -945px;
+  background-image: url("../img/bouncer.png");
+  bottom: 0;
+}
+
+.bouncerAttack {
+  width: 442px;
+  height: 457px;
+  background-position: -579px -480px;
+  background-image: url("../img/bouncer.png");
+  bottom: -2px;
+}
+
+.barista {
+  width: 257px;
+  height: 478px;
+  background-position: -249px 0;
+  background-image: url("../img/barista.png");
+  bottom: -36px;
+  transform: scale(.85);
+}
+
+.baristaWink {
+  width: 249px;
+  height: 478px;
+  background-position: 0;
+  background-image: url("../img/barista.png");
+  bottom: -36px;
+  transform: scale(.85);
+}
+
+.picture {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.wakeUpTop {
+  background: url('../img/bedroom.png');
+  background-position:  0;
+}
+
+.outsideTop {
+  background: url('../img/outside.gif');
+  background-position:  0 -800px;
+}
+
+.top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-width: 230px;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+}
+
+.storyLine {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  min-height: 324px;
+  transform: translate(-50%,0);
+  font-size: 36px;
+  display: block;
+}
+
+.notShown {
+  display: none;
+}
 .element, .element p {
   display: inline;
   font-size: 36px;

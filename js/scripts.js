@@ -76,69 +76,115 @@ $(function() {
 	var introText = "<p>Hipster: the embodiment of postmodernism as a spent force, revealing what happens when pastiche and irony exhaust themselves as aesthetics.</p><br>";
 	var name = "";
 	var wakeUpText = "<p>You wake up...^1000 mattress on the floor...^1000 exhausted from a long night of cross stitching and updating your etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night.^1000<br> The phone rings.^1000 It's your friend Harlow on the line.</p>";
-	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000<br> You've probably never heard of them,^1000 but it's an indie synth band from Iceland.^1000<br> Starts at 7:30 at 'Club Foot.'^1000 Hope to see you there!</p>"
+	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000<br> You've probably never heard of them,^1000 but it's an indie synth band from Iceland.^1000<br> Starts at 7:30 at 'Club Foot.'^1000 See you there!</p>"
+	var timer = 0;
+	var character = "";
+	// ========================== Start menu ===============================
+	timer = 1000;
 	$('#nameStart').fadeIn(2000);
-	$('#clickStart').delay(1000).fadeIn(2000);
-
+	$('#clickStart').delay(timer).fadeIn(2000);
 	$('body').click(function(){
 		$('#start').fadeOut(1000);
-		$('#story').delay(1000).fadeIn(1000);
+		// ========================== Intro Text ===============================
+		$('#story').delay(timer).fadeIn(1000);
+		timer+=500;
 		$("#storyText").typed({
 			strings: [introText],
-			typeSpeed: 50,
-			startDelay: 1500
+			typeSpeed: 0, //50
+			startDelay: timer
 		});
+		timer+=4000 //14000
 		$('body').off('click');
-		$('#story').delay(14000).fadeOut(2000);
-		$('#characterSelect').delay(18000).fadeIn(1000);
+		$('#story').delay(timer).fadeOut(2000);
+		// ========================== Name ===============================
+		timer+=4000;
+		$('#characterSelect').delay(timer).fadeIn(1000);
 	});
 	$('body').on('submit', 'form',function(event) {
+		timer = 0;
 		event.preventDefault();
 		name = $('input#name').val();
 		$('#characterSelect').fadeOut(1000);
-		$('#maleFemale').delay(1000).fadeIn(1000);
+		// ========================== Gender Select ===============================
+		timer+=1000;
+		$('#maleFemale').delay(timer).fadeIn(1000);
+		timer+=500;
 		$("#genderText").typed({
 			strings: ["Hello, " + name, "^1000Are you male or female?"],
 			typeSpeed: 50,
-			startDelay: 1500
+			startDelay: timer
 		});
-		$('#genderImages').delay(4000).fadeIn(1000);
+		timer+=2500;
+		$('#genderImages').delay(timer).fadeIn(1000);
+		timer+=3500;
 		$("#male").typed({
 			strings: ["male"],
 			typeSpeed: 50,
-			startDelay: 7500,
+			startDelay: timer,
 			showCursor: false
 		});
+		timer+=900;
 		$("#female").typed({
 			strings: ["female"],
 			typeSpeed: 50,
-			startDelay: 8400,
+			startDelay: timer,
 			showCursor: false
 		});
+		$('body').on('click', '.outline-josh', function() {
+			character = "josh";
+		});
+		$('body').on('click', '.outline-misaki', function() {
+			character = "misaki";
+		});
 		$('body').on('click', '.outline', function() {
+			console.log(character);
+			timer = 0;
 			$('#maleFemale').fadeOut(1000);
-			$('#spectrum').delay(2000).fadeIn(1000);
+			timer+=1000;
+			$('#spectrum').delay(timer).fadeIn(1000);
+			timer+=200;
 			$(".spectrumText").typed({
 				strings: ["<p>Don't you know that gender is a spectrum?</p>^500", ""],
 				typeSpeed: 50,
-				startDelay: 2200,
+				startDelay: timer,
 				showCursor: false
 			});
-			$('#spectrum').delay(6500).hide();
-			$('#wakeUp').delay(10000).fadeIn(1000);
+			timer+=4300;
+			$('#spectrum').delay(timer).hide();
+			// ========================== Scene 1 ===============================
+			timer+=3500;
+			$('.'+character).delay(timer).fadeIn(1000);
+			$('#wakeUp').delay(timer).fadeIn(1000);
 			$('.wakeUpText').typed({
 		    strings: [wakeUpText],
 		    typeSpeed: 50,
-				startDelay: 10000,
+				startDelay: timer,
 		    showCursor: false
 		  });
-		  $('.wakeUpText').delay(42000).fadeOut(1000);
+			timer+=32000;
+			$('.'+character+"Normal").delay(timer-10000).queue(function(next){
+	      $(this).addClass(character+"Phone");
+	      $(this).removeClass(character+"Normal");
+	      next();
+				$(this).dequeue();
+	    });
+			timer+=1000;
+			$('.harlow').delay(timer).fadeIn(1000);
+		  $('.wakeUpText').delay(timer).fadeOut(1000);
+			timer+=1000;
 		  $('.phoneText').typed({
 		    strings: [phoneText],
 		    typeSpeed: 50,
-		    startDelay: 43000,
+		    startDelay: timer,
 				showCursor: false
 		  });
+			$('.harlow').delay(timer-20000).fadeOut(1000);
+			$('.'+character+"Phone").delay(timer-10000).dequeue(function(next){
+	      $(this).addClass(character+"Normal");
+	      $(this).removeClass(character+"Phone");
+	      next();
+				$(this).dequeue();
+	    });
 		});
 	});
 });

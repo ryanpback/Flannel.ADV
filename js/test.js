@@ -16,4 +16,22 @@ $(function() {
     strings: ["<p>Normcore tattooed tumblr activated charcoal, quinoa humblebrag umami hammock tofu cardigan next level farm-to-table kombucha. Roof party unicorn wolf slow-carb swag, semiotics aesthetic bushwick bicycle rights. Single-origin coffee asymmetrical edison bulb man bun tbh. Four dollar toast bespoke wolf, bushwick</p>"],
     typeSpeed: 50,
   });
-})
+  $('#button').click(function() {
+    $('.bouncer').addClass('bouncerAttack');
+    $('.bouncer').removeClass('bouncer');
+    $('.bouncerAttack').delay(1500).queue(function(next){
+      $(this).addClass("bouncer");
+      $(this).removeClass("bouncerAttack");
+      next();
+    });
+  });
+  $('#misaki').click(function() {
+    $('.bouncerAttack').addClass('bouncer');
+    $('.bouncer').removeClass('bouncerAttack');
+    $('.bouncerAttack').delay(1500).queue(function(next){
+      $(this).addClass("bouncer");
+      $(this).removeClass("bouncerAttack");
+      next();
+    });
+  });
+});

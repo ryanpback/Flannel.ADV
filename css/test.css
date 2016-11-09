@@ -55,9 +55,10 @@
 }
 
 .misakiNormal {
-  width: 50px;
-  height: 130px;
-  background-position: -505px -810px;
+  width: 191px;
+  height: 385px;
+  background-position: -1077px 0;
+  bottom: -10px;
 }
 .misakiFight {
   width: 207px;
@@ -134,7 +135,7 @@
   height: 457px;
   background-position: -579px -480px;
   background-image: url("../img/bouncer.png");
-  bottom: 0;
+  bottom: -2px;
 }
 
 .barista {
@@ -164,7 +165,7 @@
 
 .wakeUpTop {
   background: url('../img/trainOutside.gif');
-  background-position: 0;
+  background-position:  0;
 }
 
 .outsideTop {
