@@ -167,7 +167,7 @@ $(function() {
 	      $(this).addClass(character+"Normal");
 	      $(this).removeClass(character+"Phone");
 	      next();
-	    });;
+	    });
 			timer+=1000;
 			$('.harlow').delay(timer).fadeIn(1000);
 		  $('.wakeUpText').delay(timer).fadeOut(1000);

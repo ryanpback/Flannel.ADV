@@ -1,33 +1,50 @@
 $(function() {
-  var wakeUpText = "<p>You wake up...^1000 mattress on the floor...^1000 exhausted from a long night of cross stitching and updating your etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night.^1000<br> The phone rings.^1000 It's your friend Harlow on the line.</p>";
-	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000<br> You've probably never heard of them,^1000 but it's an indie synth band from Iceland.^1000<br> Starts at 7:30 at 'Club Foot.'^1000 Hope to see you there!</p>"
-  $('.wakeUpText').typed({
-    strings: [wakeUpText],
+  $('#scene3').show();
+  timer = 0;
+  $('.scene3Text').typed({
+    strings: ['You arrive to the Better Book Bureau of Bigger Bushwick to find your friend Ai working.'],
     typeSpeed: 50,
+    startDelay: timer,
     showCursor: false
   });
-  $('.wakeUpText').delay(32000).fadeOut(1000);
-  $('.phoneText').typed({
-    strings: [phoneText],
+  timer+=10000;
+  var character = "josh";
+  var name = "Sherman"
+  $('.ai').delay(timer).fadeIn(1000);
+  timer+=2000;
+  $('.'+character+"Normal").delay(timer).queue(function(next){
+    $(this).addClass(character+"Bike");
+    $(this).removeClass(character+"Normal");
+    next();
+  }).delay(2000).queue(function(next){
+    $(this).addClass(character+"Normal");
+    $(this).removeClass(character+"Bike");
+    next();
+  });
+  $('.scene3Text').delay(timer).fadeOut(1000);
+  timer+=2000;
+  $('.aiText').typed({
+    strings: ['Ai: Hey ' + name + '!^1000 Your book just came in.^1000 Real quick, while I\'ve got you; I was wondering if you could help me with a problem.'],
     typeSpeed: 50,
-    startDelay: 33000
+    startDelay: timer,
+    showCursor: false
   });
-  $('.outsideText').typed({
-    strings: ["<p>Normcore tattooed tumblr activated charcoal, quinoa humblebrag umami hammock tofu cardigan next level farm-to-table kombucha. Roof party unicorn wolf slow-carb swag, semiotics aesthetic bushwick bicycle rights. Single-origin coffee asymmetrical edison bulb man bun tbh. Four dollar toast bespoke wolf, bushwick</p>"],
+  timer+=15000;
+  $('.aiText').delay(timer).fadeOut(1000);
+  timer+=2000;
+  $('.ai').delay(timer-9000).queue(function(next){
+    $(this).addClass('aiConfused');
+    next();
+  });
+  $('.riddle1Text').typed({
+    strings: ['Michael, John, Tanya and Robert are putting together a synth-based indie band. They need a singer, a keyboard player, another keyboard player and someone to operate the drum machine. Tanya can play the keyboard and sing, Michael can sing and hit buttons, Robert can also hit buttons and play the keyboard, and John can kinda play keyboards. How do you arrange everyone for this to make any sense?'],
     typeSpeed: 50,
+    startDelay: timer,
+    showCursor: false
   });
-  var character = "misaki"
-  $('#button').click(function() {
-    $('.bouncer').delay(1500).queue(function(next){
-      $(this).addClass("bouncerAttack");
-      $(this).removeClass("bouncer");
-      next();
-    }).delay(1500).queue(function(next){
-      console.log("bang2");
-      $(this).addClass("bouncer");
-      $(this).removeClass("bouncerAttack");
-      next();
-    });
-    $('.bouncerAttack')
-  });
+  timer+=38000;
+  $('.scene3Top').delay(timer).fadeOut(1000);
+  timer+=1000;
+  $('.riddle1Top').delay(timer).fadeIn(1000);
+  //$('#scene3').delay(30000).fadeOut(1000);
 });

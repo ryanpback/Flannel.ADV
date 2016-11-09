@@ -156,7 +156,7 @@ button:hover {
 .joshBike {
   width: 215px;
   height: 385px;
-  bottom: -10px;
+  bottom: 0;
   background-position: -335px 0;
 }
 
@@ -242,6 +242,7 @@ button:hover {
   background-position: -790px -377px;
   background-image: url("../img/ai.png");
   bottom: 0;
+  left:200px;
 }
 
 .veganPoser {
