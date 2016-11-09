@@ -129,7 +129,7 @@ button:hover {
   position: absolute;
   right:200px;
   background-image: url("../img/bigJosh.png");
-  display: none;
+  display: block;
 }
 
 .joshFight {
@@ -322,6 +322,16 @@ button:hover {
 .riddle1Top {
   background-color: #000;
   display: none;
+  padding-bottom: 30px;
+}
+
+.scene4Top {
+  background: url("../img/trainOutside.gif");
+}
+
+.scene4Bottom {
+  display: none;
+  line-height: 25px;
 }
 
 .top {
@@ -329,6 +339,7 @@ button:hover {
   background-size: cover;
   width: 100%;
   min-width: 230px;
+  min-height: 500px;
   height: 500px;
   padding: 0;
   margin: 0;
@@ -393,11 +404,9 @@ input:-webkit-autofill {
   display: default;
 }
 
+
 /*Ryan Luke CSS*/
 
-.riddle1Top {
-  padding-bottom: 30px;
-}
 .radio input{
   visibility: hidden;
 }
@@ -411,7 +420,7 @@ input[type="radio"]:checked + label {
   border: 2px solid #fff;
 }
 
-#puzzleTwoSubmit, #puzzleOneSubmit {
+#puzzleTwoSubmit, #puzzleOneSubmit, #reactButton {
   background-color: transparent;
   font-size: 20px;
   border-color: cyan;
