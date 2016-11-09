@@ -67,12 +67,12 @@ body {
 }
 
 #hangManPuzzle {
-  display: none;
+  /*display: none;*/
 }
 
 
 #puzzleOne {
-  /*display: none;*/
+  display: none;
   background-color: transparent;
   font-size: 25px;
 }
@@ -87,7 +87,7 @@ body {
 }
 
 #puzzleTwo {
-  /*display: none;*/
+  display: none;
   background-color: transparent;
   font-size: 25px;
 }
@@ -111,4 +111,8 @@ body {
 
 input[type="radio"]:checked + label {
   border: 2px solid #fff;
+}
+
+#potionItem {
+  display: none;
 }

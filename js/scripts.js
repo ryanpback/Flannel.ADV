@@ -12,7 +12,7 @@ function Item(itemName, itemStrength) {
 	this.itemStrength = itemStrength;
 }
 
-///////////Variables/////////////
+//============= Variables ===============
 var enemies = [];
 var nonItem = new Item("", 0);
 var book = new Item("book", 5);
@@ -24,7 +24,7 @@ var vegangirl = new Character("Wannabe Vegan Girl", 25, 25, 6);
 var aholebouncer = new Character("Asshole Bouncer", 60, 60, 7);
 var hangman = ["J", "A", "Z", "Z"];
 
-////////////Populate enemies and thier inventory/////////////
+//============= Populate Enemies And Thier Inventory ===================
 enemies.push(homelessdude);
 enemies.push(vegangirl);
 enemies.push(aholebouncer);
@@ -33,7 +33,7 @@ vegangirl.inventory.push(book, nonItem, nonItem);
 aholebouncer.inventory.push(book, fiftyShades, nonItem);
 
 
-/////////Populate inventory for character///////////
+//=============== Populate Inventory For Character =======
 
 Character.prototype.addItem = function(item) {
 	if (item === "book") {
@@ -48,6 +48,10 @@ Character.prototype.addItem = function(item) {
 	else if (item === "nothing") {
 		this.inventory.push("");
 	}
+}
+
+Character.prototype.addHealth = function() {
+	this.health += this.health * (this.inventory[2].itemStrength / 100);
 }
 
 // ================= Fight Prototypes ======================
@@ -147,7 +151,6 @@ $(function() {
 
 		var puzzleAnswer2 = "B";
 		var meaningOflife = $("input:radio[name=secondPuzzle]:checked").val();
-		console.log(meaningOflife);
 
 		if(meaningOflife === puzzleAnswer2) {
 			insertItem = "Fixie-bike"
@@ -199,6 +202,7 @@ var pictureCycle = 1;
 		if(outCome === "win") {
 			insertItem = "Nitro Coldbrew";
 			protag.addItem(insertItem);
+			$("#hangManPuzzle").hide();
 		}
 		else if(outCome === "lose" ) {
 			insertItem === "nothing";
@@ -217,5 +221,16 @@ var pictureCycle = 1;
 		}
 		else if (result === "die") {
 		}
+	});
+
+	$("#itemButton").click(function(event) {
+		event.preventDefault();
+		$("#potionItem").show();
+	});
+
+	$("#potionItem").click(function(event) {
+		console.log(protag);
+		protag.addHealth();
+		console.log(protag);
 	});
 }); //End jQuery function
