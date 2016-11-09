@@ -10,7 +10,7 @@
   position: absolute;
   right:200px;
   background-image: url("../img/bigJosh.png");
-  display: none;
+  display: block;
 }
 
 .joshFight {
@@ -41,10 +41,21 @@
   background-position: -335px 0;
 }
 
+.joshRight {
+  background-image: url("../img/joshRight.png");
+  width: 165px;
+  height: 385px;
+  bottom: 0;
+  left:200px;
+  background-position: -155px -386px;
+}
+
+
 .misaki {
   position: absolute;
   right:200px;
   background-image: url('../img/misakiBig.png');
+  display: none;
 }
 
 .misakiPhone {
@@ -77,6 +88,7 @@
 .otherChar {
   position: absolute;
   left:100px;
+  display: none;
 }
 
 .harlow {
@@ -164,7 +176,7 @@
 }
 
 .wakeUpTop {
-  background: url('../img/trainOutside.gif');
+  background: url('../img/train.gif');
   background-position:  0;
 }
 

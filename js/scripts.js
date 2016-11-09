@@ -66,8 +66,6 @@ function loseHealth(hp, character) {
 //     if(character.health[1] < 1) {
 //       return "die";
 //     }
-//     console.log(character.name + ": " + character.health[1]);
-//     console.log(enemy.name + ": " + enemy.health[1])
 //   }
 // }
 
@@ -75,7 +73,7 @@ function loseHealth(hp, character) {
 $(function() {
 	var introText = "<p>Hipster: the embodiment of postmodernism as a spent force, revealing what happens when pastiche and irony exhaust themselves as aesthetics.</p><br>";
 	var name = "";
-	var wakeUpText = "<p>You wake up...^1000 mattress on the floor...^1000 exhausted from a long night of cross stitching and updating your etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night.^1000<br> The phone rings.^1000 It's your friend Harlow on the line.</p>";
+	var wakeUpText = "<p>You wake up...^1000 mattress on the floor...^1000 exhausted from a long night of cross stitching and updating your etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night.^1000<br> The phone rings.^1000 It's your friend Harlow.</p>";
 	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000<br> You've probably never heard of them,^1000 but it's an indie synth band from Iceland.^1000<br> Starts at 7:30 at 'Club Foot.'^1000 See you there!</p>"
 	var timer = 0;
 	var character = "";
@@ -137,7 +135,6 @@ $(function() {
 			character = "misaki";
 		});
 		$('body').on('click', '.outline', function() {
-			console.log(character);
 			timer = 0;
 			$('#maleFemale').fadeOut(1000);
 			timer+=1000;
@@ -166,8 +163,11 @@ $(function() {
 	      $(this).addClass(character+"Phone");
 	      $(this).removeClass(character+"Normal");
 	      next();
-				$(this).dequeue();
-	    });
+	    }).delay(timer-15000).queue(function(next){
+	      $(this).addClass(character+"Normal");
+	      $(this).removeClass(character+"Phone");
+	      next();
+	    });;
 			timer+=1000;
 			$('.harlow').delay(timer).fadeIn(1000);
 		  $('.wakeUpText').delay(timer).fadeOut(1000);
@@ -178,13 +178,20 @@ $(function() {
 		    startDelay: timer,
 				showCursor: false
 		  });
-			$('.harlow').delay(timer-20000).fadeOut(1000);
-			$('.'+character+"Phone").delay(timer-10000).dequeue(function(next){
-	      $(this).addClass(character+"Normal");
-	      $(this).removeClass(character+"Phone");
-	      next();
-				$(this).dequeue();
-	    });
+			$('.harlow').delay(23000).fadeOut(1000);
+			timer+=25000;
+			$('#wakeUp').delay(timer).fadeOut(1000);
+			$('.phoneText').delay(timer+2000).fadeOut(1000);
+			// ========================== Scene 2 ===============================
+			timer+=3000;
+			$('#scene2').delay(timer).fadeIn(1000);
+			$('.trainText').typed({
+		    strings: ['While on the train to your favorite sustainable, gluten-free bookstore you think to yourself. "Oh man, I really hope my book on gender roles in medieval poetry came in today."'],
+		    typeSpeed: 50,
+		    startDelay: timer,
+				showCursor: false
+		  });
+			$('#scene2').delay(17000).fadeOut(1000);
 		});
 	});
 });
