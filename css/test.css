@@ -100,6 +100,15 @@
   transform: scale(.85);
 }
 
+.harlowCity {
+  width: 238px;
+  height: 450px;
+  bottom: -32px;
+  background-image: url("../img/harlow.png");
+  background-position: -433px -450px;
+  transform: scale(.85);
+}
+
 .bum {
   width: 196px;
   height: 472px;

@@ -18,7 +18,7 @@ function scene7() {
     timer+=8000;
     $('.scene7Text').delay(timer).fadeOut(1000);
     timer+=1000;
-    $('.harlow').delay(timer).fadeIn(1000);
+    $('.harlowCity').delay(timer).fadeIn(1000);
     $('.meetHarlow').typed({
       strings: ['On the way to the venue, you run into your friend Harlow!<br>^1000 Harlow: Did you get your ticket yet? I bought mine ages ago...<br>^1200 You don\'t have a ticket yet so hopefully it won\'t be too hard to get one at the door!'],
       typeSpeed: 50,
