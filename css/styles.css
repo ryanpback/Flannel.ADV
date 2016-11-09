@@ -245,6 +245,10 @@ button:hover {
   left:200px;
 }
 
+.aiConfused {
+  background-position: -630px 0;
+}
+
 .veganPoser {
   width: 172px;
   height: 377px;
@@ -307,6 +311,17 @@ button:hover {
 .outsideTop {
   background: url('../img/outside.gif');
   background-position:  0 -800px;
+}
+
+.scene3Top {
+  background: url('../img/apple.jpg');
+  background-position:  0 -500px;
+  display: block;
+}
+
+.riddle1Top {
+  background-color: #000;
+  display: none;
 }
 
 .top {

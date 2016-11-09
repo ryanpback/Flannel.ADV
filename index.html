@@ -132,9 +132,28 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 top scene3Top">
-                <div class="josh joshRight"></div>
+                <div class="josh joshNormal"></div>
                 <div class="misaki misakiRight"></div>
+                <div class="otherChar ai"></div>
             </div>
+            <div class="col-xs-12 top riddle1Top">
+              <div class="radio top-radio">
+                    <input id="question1" type="radio" name="firstPuzzle" value="A">
+                    <label for="question1">  A: Michael is the singer. Tanya and John play the keyboard. Robert Plays the drums.</label>
+                </div>
+                <div class="radio mid-radio">
+                    <input id="question2" type="radio" name="firstPuzzle" value="B">
+                    <label for="question2">B: Tanya plays the drums. Michael and Robert play the keyboard. John sings.</label>
+                </div>
+                <div class="radio mid-radio">
+                    <input id="question3" type="radio" name="firstPuzzle" value="C">
+                    <label for="question3">C: Who cares synth bands rock no matter what!!</label>
+                </div>
+                <div class="radio mid-radio">
+                    <input id="question4" type="radio" name="firstPuzzle" value="D">
+                    <label for="question4">D: Robert pressed Tanya's buttons</label>
+                </div>
+                <button type="button" class="btn btn-info" id="puzzleOneSubmit">Answer!</button>
             </div>
           </div>
         </div>
@@ -143,7 +162,9 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <div class="scene3 element wrap"></div>
+              <div class="scene3Text element wrap"></div>
+              <div class="aiText element wrap"></div>
+              <div class="riddle1Text element wrap"></div>
             </div>
           </div>
         </div>

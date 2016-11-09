@@ -1,73 +1,3 @@
-// ================= Characters ======================
-function Character(name, health, strength, inventory) {
-	this.name = name;
-  this.health = [health, health];
-  this.strength = strength;
-  this.inventory = [];
-}
-
-var protag = new Character("Kaeric", 30, 6);
-var goblin = new Character("Goblin", 15, 4);
-
-// ================= Items ======================
-function Weapon(type, damage) {
-	this.type = type;
-  this.damage = damage;
-}
-
-function Shield(type, defense) {
-	this.type = type;
-  this.defense = defense;
-}
-
-var sword = new Weapon("sword", 5);
-var buckler = new Shield("buckler", 5);
-
-protag.inventory.push(sword);
-goblin.inventory.push(sword);
-protag.inventory.push(buckler);
-
-// ================= Fight Functions ======================
-function attack(character) {
-	return ((Math.round(Math.random() * 6) + character.strength) + character.inventory[0].damage) -6;
-}
-
-function defense(character) {
-	return character.inventory[1].defense;
-}
-
-function fight(character, enemy) {
-	if(enemy.inventory[1]) {
-  	var damage = attack(character) - defense(enemy);
-  }
-  else {
-  	var damage = attack(character);
-  }
-	if(damage > 0) {
-  	enemy.health[1] = enemy.health[1] - damage;
-  }
-	else if(damage <= 0) {
-		damage = 0;
-	}
-	return damage;
-}
-
-function loseHealth(hp, character) {
-	return (hp / character.health[0]);
-}
-
-// function instance(character, enemy) {
-// 	while(character.health[1] > 0 && enemy.health[1] > 0){
-//   	fight(character, enemy);
-//     if(enemy.health[1] < 1) {
-//       return "win";
-//     }
-//     fight(enemy, character);
-//     if(character.health[1] < 1) {
-//       return "die";
-//     }
-//   }
-// }
 
 // ================= Front End ======================
 $(function() {
@@ -78,8 +8,8 @@ $(function() {
 	var timer = 0;
 	var character = "";
 	// ========================== Start menu ===============================
-	timer = 1000;
 	$('#nameStart').fadeIn(2000);
+	timer+= 1000;
 	$('#clickStart').delay(timer).fadeIn(2000);
 	$('body').click(function(){
 		$('#start').fadeOut(1000);
@@ -159,7 +89,7 @@ $(function() {
 		    showCursor: false
 		  });
 			timer+=32000;
-			$('.'+character+"Normal").delay(timer-10000).queue(function(next){
+			$('.'+character+"Normal").delay(timer-9000).queue(function(next){
 	      $(this).addClass(character+"Phone");
 	      $(this).removeClass(character+"Normal");
 	      next();
@@ -192,6 +122,52 @@ $(function() {
 				showCursor: false
 		  });
 			$('#scene2').delay(17000).fadeOut(1000);
+			timer+=19000;
+			// ========================== Scene 3 ===============================
+			$('#scene3').delay(timer).fadeIn(1000);
+		  $('.scene3Text').typed({
+		    strings: ['You arrive to the Better Book Bureau of Bigger Bushwick to find your friend Ai working.'],
+		    typeSpeed: 50,
+		    startDelay: timer,
+		    showCursor: false
+		  });
+		  timer+=10000;
+		  $('.ai').delay(timer).fadeIn(1000);
+		  timer+=2000;
+		  $('.'+character+"Normal").delay(timer).queue(function(next){
+		    $(this).addClass(character+"Bike");
+		    $(this).removeClass(character+"Normal");
+		    next();
+		  }).delay(2000).queue(function(next){
+		    $(this).addClass(character+"Normal");
+		    $(this).removeClass(character+"Bike");
+		    next();
+		  });
+		  $('.scene3Text').delay(timer).fadeOut(1000);
+		  timer+=2000;
+		  $('.aiText').typed({
+		    strings: ['Ai: Hey ' + name + '!^1000 Your book just came in.^1000 Real quick, while I\'ve got you; I was wondering if you could help me with a problem.'],
+		    typeSpeed: 50,
+		    startDelay: timer,
+		    showCursor: false
+		  });
+		  timer+=15000;
+		  $('.aiText').delay(timer).fadeOut(1000);
+		  timer+=2000;
+		  $('.ai').delay(timer).queue(function(next){
+		    $(this).addClass('aiConfused');
+		    next();
+		  });
+		  $('.riddle1Text').typed({
+		    strings: ['Michael, John, Tanya and Robert are putting together a synth-based indie band. They need a singer, a keyboard player, another keyboard player and someone to operate the drum machine. Tanya can play the keyboard and sing, Michael can sing and hit buttons, Robert can also hit buttons and play the keyboard, and John can kinda play keyboards. How do you arrange everyone for this to make any sense?'],
+		    typeSpeed: 50,
+		    startDelay: timer,
+		    showCursor: false
+		  });
+		  timer+=38000;
+		  $('.scene3Top').delay(timer).fadeOut(1000);
+		  timer+=1000;
+		  $('.riddle1Top').delay(timer).fadeIn(1000);
 		});
 	});
 });
