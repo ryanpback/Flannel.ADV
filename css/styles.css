@@ -392,3 +392,49 @@ input:-webkit-autofill {
 .show {
   display: default;
 }
+
+/*Ryan Luke CSS*/
+
+.riddle1Top {
+  padding-bottom: 30px;
+}
+.radio input{
+  visibility: hidden;
+}
+
+.radio label:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+input[type="radio"]:checked + label {
+  border: 2px solid #fff;
+}
+
+#puzzleTwoSubmit, #puzzleOneSubmit {
+  background-color: transparent;
+  font-size: 20px;
+  border-color: cyan;
+  border-radius: 50px;
+  box-shadow: 2px 2px 2px #fff;
+  margin-left: 50px;
+}
+
+#puzzleOneOutput {
+  margin-top: 30px;
+  margin-left: 50px;
+  font-size: 26px;
+}
+
+.mid-radio {
+  margin-bottom: 30px;
+  margin-left: 30px;
+  font-size: 30px;
+}
+
+.top-radio {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  font-size: 30px;
+}

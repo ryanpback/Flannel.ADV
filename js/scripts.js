@@ -18,10 +18,10 @@ $(function() {
 		timer+=500;
 		$("#storyText").typed({
 			strings: [introText],
-			typeSpeed: 0, //50
+			typeSpeed: 50,
 			startDelay: timer
 		});
-		timer+=4000 //14000
+		timer+=14000;
 		$('body').off('click');
 		$('#story').delay(timer).fadeOut(2000);
 		// ========================== Name ===============================
@@ -168,6 +168,31 @@ $(function() {
 		  $('.scene3Top').delay(timer).fadeOut(1000);
 		  timer+=1000;
 		  $('.riddle1Top').delay(timer).fadeIn(1000);
+			$("#puzzleOneSubmit").click(function(event) {
+			event.preventDefault();
+
+			var puzzleAnswer1 = "C";
+			var riddleAnswer = $("input:radio[name=firstPuzzle]:checked").val();
+
+			if(riddleAnswer === puzzleAnswer1) {
+				insertItem = "book"
+				// protag.addItem(insertItem);
+	      $('#puzzleOneOutput').typed({
+	      strings: ["You are correct"],
+	        typeSpeed: 20,
+	        showCursor: false
+	      });
+			}
+			else {
+				insertItem = "nothing";
+				// protag.addItem(insertItem);
+	      $('#puzzleOneOutput').typed({
+	      strings: ["You are incorrect"],
+	        typeSpeed: 20,
+	        showCursor: false
+			  });
+		   };
+	   });
 		});
 	});
 });

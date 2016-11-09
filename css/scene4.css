@@ -173,6 +173,8 @@
   transform: scale(.85);
 }
 
+/*========================= Background Styles ====================================*/
+
 .picture {
   position: fixed;
   top: 10%;
@@ -208,7 +210,6 @@
 
 .scene5Top {
   background: url('../img/outside.gif');
-  background-position: 0 -800px;
   display: block;
 }
 
@@ -230,8 +231,4 @@
   transform: translate(-50%,0);
   font-size: 36px;
   display: block;
-}
-
-.notShown {
-  display: none;
 }
