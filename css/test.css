@@ -1,3 +1,193 @@
 #wakeUp {
   display: block;
 }
+
+#outside {
+  display: none;
+}
+
+.josh {
+  position: absolute;
+  right:200px;
+  background-image: url("../img/bigJosh.png");
+  display: none;
+}
+
+.joshFight {
+  width: 215px;
+  height: 385px;
+  bottom: -10px;
+  background-position: -335px 0;
+}
+
+.joshPhone {
+  width: 187px;
+  height: 385px;
+  bottom: -15px;
+  background-position: -815px -390px;
+}
+
+.joshNormal {
+  width: 165px;
+  height: 385px;
+  bottom: -10px;
+  background-position: -1165px 0;
+}
+
+.joshBike {
+  width: 215px;
+  height: 385px;
+  bottom: -10px;
+  background-position: -335px 0;
+}
+
+.misaki {
+  position: absolute;
+  right:200px;
+  background-image: url('../img/misakiBig.png');
+}
+
+.misakiPhone {
+  width:180px;
+  height:385px;
+  bottom: -10px;
+  background-position: -1270px 0;
+}
+
+.misakiNormal {
+  width: 50px;
+  height: 130px;
+  background-position: -505px -810px;
+}
+.misakiFight {
+  width: 207px;
+  height: 385px;
+  background-position: -493px 0;
+  bottom: -10px;
+}
+
+.misakiBike {
+  width: 220px;
+  height: 385px;
+  background-position: -280px 0;
+  bottom: -13px;
+}
+
+.otherChar {
+  position: absolute;
+  left:100px;
+}
+
+.harlow {
+  width: 225px;
+  height: 450px;
+  bottom: -36px;
+  background-image: url("../img/harlow.png");
+  background-position: -210px -450px;
+  transform: scale(.85);
+}
+
+.bum {
+  width: 196px;
+  height: 472px;
+  bottom: -36px;
+  background-image: url("../img/bum.png");
+  background-position: 0;
+  transform: scale(.85);
+}
+
+.bikeGuy {
+  width: 290px;
+  height: 468px;
+  background-position: 0;
+  background-image: url("../img/bikeGuy.png");
+  transform: scale(.85);
+  bottom: -36px;
+}
+
+.ai {
+  width: 157px;
+  height: 376px;
+  background-position: -790px -377px;
+  background-image: url("../img/ai.png");
+  bottom: 0;
+}
+
+.veganPoser {
+  width: 172px;
+  height: 377px;
+  background-position: 0;
+  background-image: url("../img/veganPoser.png");
+  bottom: 0;
+}
+
+.bouncer {
+  width: 480px;
+  height: 455px;
+  background-position: -86px -945px;
+  background-image: url("../img/bouncer.png");
+  bottom: 0;
+}
+
+.bouncerAttack {
+  width: 442px;
+  height: 457px;
+  background-position: -579px -480px;
+  background-image: url("../img/bouncer.png");
+  bottom: 0;
+}
+
+.barista {
+  width: 257px;
+  height: 478px;
+  background-position: -249px 0;
+  background-image: url("../img/barista.png");
+  bottom: -36px;
+  transform: scale(.85);
+}
+
+.baristaWink {
+  width: 249px;
+  height: 478px;
+  background-position: 0;
+  background-image: url("../img/barista.png");
+  bottom: -36px;
+  transform: scale(.85);
+}
+
+.picture {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.wakeUpTop {
+  background: url('../img/trainOutside.gif');
+  background-position: 0;
+}
+
+.outsideTop {
+  background: url('../img/outside.gif');
+  background-position:  0 -800px;
+}
+
+.top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-width: 230px;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+}
+
+.storyLine {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  min-height: 324px;
+  transform: translate(-50%,0);
+  font-size: 36px;
+  display: block;
+}

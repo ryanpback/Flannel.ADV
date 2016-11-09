@@ -12,4 +12,8 @@ $(function() {
     typeSpeed: 50,
     startDelay: 33000
   });
+  $('.outsideText').typed({
+    strings: ["<p>Normcore tattooed tumblr activated charcoal, quinoa humblebrag umami hammock tofu cardigan next level farm-to-table kombucha. Roof party unicorn wolf slow-carb swag, semiotics aesthetic bushwick bicycle rights. Single-origin coffee asymmetrical edison bulb man bun tbh. Four dollar toast bespoke wolf, bushwick</p>"],
+    typeSpeed: 50,
+  });
 })

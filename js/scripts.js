@@ -75,8 +75,8 @@ function loseHealth(hp, character) {
 $(function() {
 	var introText = "<p>Hipster: the embodiment of postmodernism as a spent force, revealing what happens when pastiche and irony exhaust themselves as aesthetics.</p><br>";
 	var name = "";
-	var wakeUpText = "<p>You wake up,^1000 mattress on the floor,^1000 exhausted from a long night of cross stitching and updating your etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night. The phone rings.^1000 It's your friend Harlow on the line.</p>";
-	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000 You've probably never heard of them, but it's an indie synth band from Iceland. Starts at 7:30 at 'Club Foot.'^1000 Hope to see you there!</p>"
+	var wakeUpText = "<p>You wake up...^1000 mattress on the floor...^1000 exhausted from a long night of cross stitching and updating your etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night.^1000<br> The phone rings.^1000 It's your friend Harlow on the line.</p>";
+	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000<br> You've probably never heard of them,^1000 but it's an indie synth band from Iceland.^1000<br> Starts at 7:30 at 'Club Foot.'^1000 Hope to see you there!</p>"
 	$('#nameStart').fadeIn(2000);
 	$('#clickStart').delay(1000).fadeIn(2000);
 
@@ -129,16 +129,16 @@ $(function() {
 			$('.wakeUpText').typed({
 		    strings: [wakeUpText],
 		    typeSpeed: 50,
-				startDelay: 10100,
+				startDelay: 10000,
 		    showCursor: false
 		  });
-	// 	  $('.wakeUpText').delay(21000).fadeOut(1000);
-	// 	  $('.phoneText').typed({
-	// 	    strings: [phoneText],
-	// 	    typeSpeed: 50,
-	// 	    startDelay: 22500,
-	// 			showCursor: false
-	// 	  });
+		  $('.wakeUpText').delay(42000).fadeOut(1000);
+		  $('.phoneText').typed({
+		    strings: [phoneText],
+		    typeSpeed: 50,
+		    startDelay: 43000,
+				showCursor: false
+		  });
 		});
 	});
 });
