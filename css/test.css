@@ -199,6 +199,12 @@
 .scene6Top {
   background: url('../img/outside.gif');
   background-position:  0 -800px;
+  display: none;
+}
+
+.scene7Top {
+  background: url('../img/city.gif');
+  background-position: 0 -1200px;
   display: block;
 }
 
