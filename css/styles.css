@@ -109,7 +109,6 @@ body {
   text-decoration-color: white;
 }
 
-#puzzleTwo input[type="radio"]:checked + label {
-  /*text-decoration: underline;*/
-  border-bottom: 2px solid #fff;
+input[type="radio"]:checked + label {
+  border: 2px solid #fff;
 }

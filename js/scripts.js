@@ -147,6 +147,7 @@ $(function() {
 
 		var puzzleAnswer2 = "B";
 		var meaningOflife = $("input:radio[name=secondPuzzle]:checked").val();
+		console.log(meaningOflife);
 
 		if(meaningOflife === puzzleAnswer2) {
 			insertItem = "Fixie-bike"
