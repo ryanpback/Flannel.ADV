@@ -15,9 +15,9 @@ function Item(itemName, itemStrength) {
 ///////////Variables/////////////
 var enemies = [];
 var nonItem = new Item("", 0);
-var sword = new Item("sword", 5);
+var book = new Item("book", 5);
 var fixiebike = new Item("Fixie-bike", 5);
-var nitrocoldbrew = new Item("Nitro coldbrew", 30);
+var nitrocoldbrew = new Item("Nitro Coldbrew", 30);
 var fiftyShades = new Item("Fifty Shades of Grey Book", 5)
 var homelessdude = new Character("Homeless Dude", 20, 20, 4);
 var vegangirl = new Character("Wannabe Vegan Girl", 25, 25, 6);
@@ -29,29 +29,24 @@ enemies.push(homelessdude);
 enemies.push(vegangirl);
 enemies.push(aholebouncer);
 homelessdude.inventory.push(nonItem, nonItem, nonItem);
-vegangirl.inventory.push(sword, nonItem, nonItem);
-aholebouncer.inventory.push(sword, fiftyShades, nonItem);
+vegangirl.inventory.push(book, nonItem, nonItem);
+aholebouncer.inventory.push(book, fiftyShades, nonItem);
+
 
 /////////Populate inventory for character///////////
-///////Remove addBlanks after ui/back-end merge///////////
-addBlanks = function(character) {
-	character.inventory.push(nonItem);
-	character.inventory.push(nonItem);
-	character.inventory.push(nonItem);
-}
-//make prototype
-addItem = function(character, item) {
-	if (item === "sword") {
-		charcter.inventory.push(sword);
+
+Character.prototype.addItem = function(item) {
+	if (item === "book") {
+		this.inventory.push(book);
 	}
 	else if (item === "Fixie-bike") {
-		charcter.inventory.push(fixiebike);
+		this.inventory.push(fixiebike);
 	}
-	else if (item === "Nitro coldbrew") {
-		charcter.inventory.push(nitrocoldbrew);
+	else if (item === "Nitro Coldbrew") {
+		this.inventory.push(nitrocoldbrew);
 	}
 	else if (item === "nothing") {
-		charcter.inventory.push("");
+		this.inventory.push("");
 	}
 }
 
@@ -61,7 +56,7 @@ Character.prototype.attack = function() {
 	if (this.inventory[0].itemName === "") {
 		return (Math.round(Math.random() * 5) + this.strength);
 	}
-	else if (this.inventory[0].itemName === "sword") {
+	else if (this.inventory[0].itemName === "book") {
 		return ((Math.round(Math.random() * 5) + this.strength) + this.inventory[0].itemStrength) -5;
 	}
 }
@@ -70,7 +65,7 @@ Character.prototype.enemyAttack = function() {
 	if (this.inventory[0].itemName === "") {
 		return ((Math.round(Math.random() * 8) + this.strength));
 	}
-	else if (this.inventory[0].itemName === "sword") {
+	else if (this.inventory[0].itemName === "book") {
 		return ((Math.round(Math.random() * 8) + this.strength) + this.inventory[0].itemStrength) -8;
 	}
 }
@@ -112,43 +107,65 @@ guessLetter	= function(letters) {
 		return "Incorrect"
 };
 
-// var head = document.getElementById("#hangman-images#head");
-// head.style.left = x + "4360px";
-// head.style.top = y + "43500px";
-//
-// var body = document.getElementById("body");
-// body.style.left = x + "60px";
-// body.style.top = y + "300px";
-//
-// var leftLeg = document.getElementById("leftLeg");
-// leftLeg.style.left = x + "60px";
-// leftLeg.style.top = y + "300px";
-//
-// var rightLeg = document.getElementById("rightLeg");
-// rightLeg.style.left = x + "60px";
-// rightLeg.style.top = y + "300px";
-//
-// var leftArm = document.getElementById("leftArm");
-// leftArm.style.left = x + "60px";
-// leftArm.style.top = y + "300px";
-//
-// var rightArm = document.getElementById("rightArm");
-// rightArm.style.left = x + "60px";
-// rightArm.style.top = y + "300px";
-
-
-
 // ================= Front End ======================
 $(function() {
+// ================= Variables ======================
+	var insertItem;
+
+// ================= Create Character ======================
 	var protag = {};
-	var index = 0;
+
 	$("form#userName").submit(function(event) {
 		event.preventDefault();
 		var playerName = $("input#playerName").val();
 		protag = new Character(playerName, 30, 30, 6);
-		addBlanks(protag);
-		console.log(protag);
+		protag.inventory.push(nonItem, nonItem);
 	});
+
+// ================= Riddle: Puzzle 1 ======================
+	$("#puzzleOneSubmit").click(function(event) {
+		event.preventDefault();
+
+		var puzzleAnswer1 = "C";
+		var riddleAnswer = $("input:radio[name=firstPuzzle]:checked").val();
+
+		if(riddleAnswer === puzzleAnswer1) {
+			insertItem = "book"
+			protag.addItem(insertItem);
+			$("#puzzleOneOutput").text("You are correct");
+		}
+		else {
+			insertItem = "nothing";
+			protag.addItem(insertItem);
+			$("#puzzleOneOutput").text("You suck!");
+		}
+	});
+
+// ================= Meaning of Life: Puzzle 2 ======================
+	$("#puzzleTwoSubmit").click(function(event) {
+		event.preventDefault();
+
+		var puzzleAnswer2 = "B";
+		var meaningOflife = $("input:radio[name=secondPuzzle]:checked").val();
+
+		if(meaningOflife === puzzleAnswer2) {
+			insertItem = "Fixie-bike"
+			protag.addItem(insertItem);
+			$("#puzzleTwoOutput").text("You dont know the meaning of life. You are correct.");
+		}
+		else {
+			insertItem = "nothing";
+			protag.addItem(insertItem);
+			$("#puzzleTwoOutput").text("You think you know the question to the meaning of life, therefore you are wrong.");
+		}
+	});
+
+
+// ================= HangMan Puzzle: Puzzle 3 ======================
+var winCount = 0;
+var loseCount = 0;
+var outCome = "";
+var pictureCycle = 1;
 
 	$("form#letterPuzzle").submit(function(event) {
 		event.preventDefault();
@@ -157,6 +174,7 @@ $(function() {
 		var guessResult = guessLetter(letterGuess);
 		for (var idx = 0; idx < 4; idx++) {
 			if (guessResult === idx) {
+				winCount++;
 				if(guessResult === 2) {
 					$(".correct-answers span3").text(letterGuess);
 				}
@@ -164,22 +182,39 @@ $(function() {
 				$("input#playerGuess").val("");
 			}
 		}
+		if(winCount === 3) {
+			outCome = "win";
+		}
 		if (guessResult === "Incorrect") {
+			loseCount ++;
 			$("#incorrect-answers span" + idx).append(letterGuess);
+			$("#bodyPart" + pictureCycle).fadeIn(2000);
+			pictureCycle++;
+			$("input#playerGuess").val("");
+		}
+		if(loseCount === 6) {
+			outCome = "lose";
+		}
+		if(outCome === "win") {
+			insertItem = "Nitro Coldbrew";
+			protag.addItem(insertItem);
+		}
+		else if(outCome === "lose" ) {
+			insertItem === "nothing";
+			protag.addItem(insertItem);
 		}
 	});
 
-	//
+// ================= Fight! ======================
+	var index = 0;
+
 	$('#fightButton').click(function(){
 		console.log(enemies[index]);
 		var result = protag.fight(enemies[index]);
 		if (result === "win") {
 			index++;
-			console.log("player wins");
 		}
 		else if (result === "die") {
-			console.log("you lose");
 		}
 	});
 }); //End jQuery function
-// var protag = new Character("Kaeric", 30, 30, 6);

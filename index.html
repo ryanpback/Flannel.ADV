@@ -18,37 +18,106 @@
       <button type="submit" class="btn btn-info" id="submitButton">Submit</button>
       </form>
       <button type="button" class="btn btn-danger" id="fightButton">Fight</button>
-      <form id="letterPuzzle">
-        <div class="form-group">
-          <input type="text" class="form-control" id="playerGuess" placeholder="Guess a Letter">
+
+      <!-- RIDDLE: 1 -->
+      <div class="well" id="puzzleOne">
+        <h2>Puzzle 1 Question</h2>
+        <p>Michael, John, Tanya and Robert are putting together a synth-based indie band. They need a singer, a keyboard player, another keyboard player and someone to operate the drum machine. Tanya can play the keyboard and sing, Michael can sing and hit buttons, Robert can also hit buttons and play the keyboard, and John can kinda play keyboards. How do you arrange everyone for this to make any sense?</p>
+        <div class="radio top-radio">
+          <label>
+            <input type="radio" name="firstPuzzle" value="A">
+            A: Michael is the singer. Tanya and John play the keyboard. Robert Plays the drums.
+          </label>
         </div>
-      <button type="submit" class="btn btn-info" id="checkLetter">Check Letter</button>
-      </form>
-      <div class="row">
-        <div class="col-md-6 outputBoxes">
-          <div class="user-answers">
-            <p class="underline correct-answers"><span0></span0></p>
-            <p class="underline correct-answers"><span1></span1></p>
-            <p class="underline correct-answers"><span2></span2></p>
-            <p class="underline correct-answers"><span3></span3></p>
-            <p id="incorrect-answers"></p>
+        <div class="radio mid-radio">
+          <label>
+            <input type="radio" name="firstPuzzle" value="B">
+            B: Tanya plays the drums. Michael and Robert play the keyboard. John sings.
+          </label>
+        </div>
+        <div class="radio mid-radio">
+          <label>
+            <input type="radio" name="firstPuzzle" value="C">
+            C: Who cares synth bands rock no matter what!!
+          </label>
+        </div>
+        <div class="radio mid-radio">
+          <label>
+            <input type="radio" name="firstPuzzle" value="D">
+            D: Robert pressed Tanya's buttons
+          </label>
+        </div>
+        <button type="button" class="btn btn-info" id="puzzleOneSubmit">Answer!</button>
+      </div> <!-- .well -->
+      <p id="puzzleOneOutput"></p>
+
+      <!-- RIDDLE: 2 - MEANING OF LIFE -->
+      <div class="well" id="puzzleTwo">
+        <h2>Puzzle 2 Question</h2>
+        <p>The answer to the ultimate question of life, the universe, and everything is 42. What is the question?</p>
+        <div class="radio top-radio">
+          <label>
+            <input type="radio" name="secondPuzzle" value="A" checked>
+          A: Why is the sky blue?</label>
+        </div>
+        <div class="radio mid-radio">
+          <label>
+            <input type="radio" name="secondPuzzle" value="B">
+            B: Nobody Knows...
+          </label>
+        </div>
+        <div class="radio mid-radio">
+          <label>
+            <input type="radio" name="secondPuzzle" value="C">
+            C: What is the square root of 42?
+          </label>
+        </div>
+        <div class="radio mid-radio">
+          <label>
+            <input type="radio" name="secondPuzzle" value="D">
+            D: Can you believe who won the election?!
+          </label>
+        </div>
+        <button type="button" class="btn btn-info" id="puzzleTwoSubmit">Answer!</button>
+      </div>
+
+      <p id="puzzleTwoOutput"></p>
+
+
+      <!-- HANGMAN PUZZLE -->
+      <div id="hangManPuzzle">
+        <form id="letterPuzzle">
+          <div class="form-group">
+            <input type="text" class="form-control" id="playerGuess" placeholder="Guess a Letter">
           </div>
-        </div>
-        <div class="col-md-6 outputBoxes">
-          <div class="hang-man">
-              <p id="hangMan-images">
-                <p><img id="hangMan" src="img/hangman.png"></p>
-                <p><img id="head" src="img/head.png"></p>
-                <p><img id="body" src="img/body.png"></p>
-                <p><img id="leftArm" src="img/leftExtension.png"></p>
-                <p><img id="rightArm" src="img/rightExtension.png"></p>
-                <p><img id="leftLeg" src="img/leftExtension.png"></p>
-                <p><img id="rightLeg" src="img/rightExtension.png"></p>
-              </p>
+        <button type="submit" class="btn btn-info" id="checkLetter">Check Letter</button>
+        </form>
+        <div class="row">
+          <div class="col-md-6 outputBoxes">
+            <div class="user-answers">
+              <p class="underline correct-answers"><span0></span0></p>
+              <p class="underline correct-answers"><span1></span1></p>
+              <p class="underline correct-answers"><span2></span2></p>
+              <p class="underline correct-answers"><span3></span3></p>
+              <p id="incorrect-answers"></p>
+            </div>
           </div>
-        </div>
-      </div> <!-- .row -->
-    </div>
+          <div class="col-md-6 outputBoxes">
+            <div class="hang-man">
+                <p id="hangMan-images">
+                  <p><img id="hangMan" src="img/hangman.png"></p>
+                  <p><img id="bodyPart1" src="img/head.png"></p>
+                  <p><img id="bodyPart2" src="img/body.png"></p>
+                  <p><img id="bodyPart3" src="img/leftExtension.png"></p>
+                  <p><img id="bodyPart4" src="img/rightExtension.png"></p>
+                  <p><img id="bodyPart5" src="img/leftExtension.png"></p>
+                  <p><img id="bodyPart6" src="img/rightExtension.png"></p>
+                </p>
+            </div>
+          </div>
+        </div> <!-- .row -->
+      </div>
+    </div> <!-- .container -->
       <!-- </div> id="correct-answers"> -->
     </div>
   </body>
