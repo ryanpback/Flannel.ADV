@@ -193,6 +193,12 @@
 .scene3Top {
   background: url('../img/apple.jpg');
   background-position:  0 -500px;
+  display: none;
+}
+
+.scene6Top {
+  background: url('../img/outside.gif');
+  background-position:  0 -800px;
   display: block;
 }
 
