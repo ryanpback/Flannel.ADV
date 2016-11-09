@@ -208,6 +208,12 @@
   display: block;
 }
 
+.scene8Top {
+  background: url('../img/bar.gif');
+  background-position: 0 -500px;
+  display: block;
+}
+
 .riddle1Top {
   background-color: #000;
   display: none;
