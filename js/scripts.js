@@ -170,28 +170,31 @@ $(function() {
 		  $('.riddle1Top').delay(timer).fadeIn(1000);
 			$("#puzzleOneSubmit").click(function(event) {
 			event.preventDefault();
-
 			var puzzleAnswer1 = "C";
 			var riddleAnswer = $("input:radio[name=firstPuzzle]:checked").val();
-
 			if(riddleAnswer === puzzleAnswer1) {
-				insertItem = "book"
-				// protag.addItem(insertItem);
-	      $('#puzzleOneOutput').typed({
-	      strings: ["You are correct"],
-	        typeSpeed: 20,
-	        showCursor: false
-	      });
-			}
-			else {
-				insertItem = "nothing";
-				// protag.addItem(insertItem);
-	      $('#puzzleOneOutput').typed({
-	      strings: ["You are incorrect"],
-	        typeSpeed: 20,
-	        showCursor: false
-			  });
-		   };
+		    insertItem = "book"
+		    // protag.addItem(insertItem);
+		    $('#puzzleOneOutput').typed({
+		    strings: ["You're right!^1000 Synth is great no matter who is playing what!"],
+		      typeSpeed: 20,
+		      showCursor: false
+		    });
+		    var riddle1 = true;
+		  }
+		  else {
+		    insertItem = "nothing";
+		    // protag.addItem(insertItem);
+		    $('#puzzleOneOutput').typed({
+		    strings: ["I don't think that will work..."],
+		      typeSpeed: 20,
+		      showCursor: false
+		    });
+		   }
+		   if(riddle1) {
+		     scene4();
+		   }
+		  });
 	   });
 		});
 	});
