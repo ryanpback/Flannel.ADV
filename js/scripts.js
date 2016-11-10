@@ -513,7 +513,7 @@ function hangMan() {
 		for (var idx = 0; idx < 4; idx++) {
 			if (guessResult === idx) {
 				winCount++;
-        hangman.splice(idx,1);
+        hangman[idx] = "";
 				if(guessResult === 2) {
 					$(".correct-answers span3").text(letterGuess);
 				}
