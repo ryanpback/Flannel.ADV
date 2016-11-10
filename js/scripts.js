@@ -197,7 +197,7 @@ function scene2() {
        $('.riddle1Text').fadeOut(1000);
        $('.scene3Top').delay(1000).fadeIn(1000);
        $('.riddle1ResponseText').typed({
-         strings: ['You\'re so right!!!^1000 I\'ll tell them that! Oh, I heard you were going to \'Club Foot\' tonight!.^1000 Apparently that used to be a huge <em>jazz</em> club.'],
+         strings: ['You\'re so right!!!^1000 I\'ll tell them that! Oh, I heard you were going to \'Club Foot\' tonight!^1000 Apparently that used to be a huge <em>jazz</em> club.'],
          typeSpeed: typeFast,
          startDelay: 1000,
          showCursor: false
@@ -477,7 +477,7 @@ function scene8() {
     $('#scene8').delay(timer).fadeIn(1000);
 		$('.bouncer').delay(timer).fadeIn(1000);
     $('.scene8Text').typed({
-      strings: ['Bouncer: Sorry, we\'re sold out of tickets.<br>^1000 You: But I know the bar guy!<br>^1000 Bouncer: Fine. If you can solve the hardest game of hang-man known to man, both hanged and not,^1000 only then will I let you in.'],
+      strings: ['Bouncer: Sorry, we\'re sold out of tickets.<br>^1000 You: But I know the bar guy!<br>^1000 Bouncer: Tell you what, if you can solve the hardest game of hang-man known to man, both hanged and not,^1000 only then will I let you in.'],
       typeSpeed: typeFast,
       startDelay: timer,
       showCursor: false
