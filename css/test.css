@@ -85,6 +85,16 @@
   bottom: -13px;
 }
 
+.misakiRight {
+  position: absolute;
+  left: 200px;
+  width: 183px;
+  height: 385px;
+  background-image: url('../img/misakiRight.png');
+  background-position: -167px -382px;
+  bottom: 0;
+}
+
 .otherChar {
   position: absolute;
   left:100px;
