@@ -8,7 +8,7 @@ $(function(){
   	$('#nameStart').fadeIn(2000);
   	var timer = 1000;
   	$('#clickStart').delay(timer).fadeIn(2000);
-  	$('body').click(function(){
+  	$('#here').click(function(){
   		$('#start').fadeOut(1000);
   		// ========================== Intro Text ===============================
   		$('#story').delay(timer).fadeIn(1000);

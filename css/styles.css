@@ -5,6 +5,11 @@ body {
   color: #fff;
 }
 
+.jumbotron h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #nameStart{
   position: fixed;
   top: 40%;
