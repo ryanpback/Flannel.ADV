@@ -393,6 +393,16 @@ button:hover {
   display: block;
 }
 
+.suck {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  min-height: 324px;
+  transform: translate(-50%,0);
+  font-size: 36px;
+  display: block;
+}
+
 .notShown {
   display: none;
 }
@@ -487,4 +497,136 @@ input[type="radio"]:checked + label {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+}
+
+/*============================ Hangman Styles ====================================*/
+
+#hangManPuzzle {
+  background: url('../img/background.jpg');
+  height: 1004px;
+  width: 1170px;
+  border: 5px solid white;
+  display: none;
+  position: absolute;
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#hangMan {
+  position: relative;
+  margin-top: 200px;
+  margin-right: 10px;
+  left: 0px;
+  top: 0px;
+}
+
+#bodyPart1 {
+  display: none;
+  position: relative;
+    left: 7px;
+    bottom: 502px;
+}
+
+#bodyPart2 {
+  display: none;
+  position: relative;
+  left: 55px;
+  bottom: 527px;
+}
+
+#bodyPart3 {
+  display: none;
+  position: relative;
+    right: 37px;
+    bottom: 680px;
+}
+
+#bodyPart4 {
+  display: none;
+  position: relative;
+    left: 65px;
+    bottom: 827px;
+}
+
+#bodyPart5 {
+  display: none;
+  position: relative;
+    right: 34px;
+    bottom: 850px;
+}
+
+#bodyPart6 {
+  display: none;
+  position: relative;
+  left: 63px;
+  bottom: 996px;
+}
+
+#playerGuess {
+  background-color: white;
+  text-align: center;
+  border: 3px solid #5bc0de;
+  color: black;
+  width: 200px;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: black;
+}
+
+form {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.incorrect-answers {
+  color: white;
+}
+
+.correct-answers {
+  display: inline;
+}
+
+.underline {
+  border-bottom: 2px solid white;
+}
+
+.user-answers {
+  margin-left: 30px;
+  margin-top: 50px;
+  padding-top: 20px;
+  height: 100px;
+  display: inline;
+}
+
+.user-answers h2, p {
+  margin-left: 30px;
+}
+
+.userIncorrect {
+  margin-top: 70px;
+  margin-left: 30px;
+  height: 50px;
+}
+
+.incorrectGuess {
+  margin-top: 20px;
+  position: absolute;
+  margin-left: 30px;
+  padding-bottom: 30px;
+  display: inline;
+}
+
+.outputBoxes {
+  margin-top: 10px;
+}
+
+#hangmanTitle {
+  padding-top: 30px;
+  margin-left: 30px;
+  font-size: 35px;
+}
+#checkLetter {
+max-width: 200px;
 }

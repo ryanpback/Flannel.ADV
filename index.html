@@ -331,8 +331,54 @@
         </div>
       </div>
     </section>
+    <section id="hangManPuzzle">
+      <div class="container">
+        <div class="row">
+          <h2 id="hangmanTitle">Guess the four letter word!</h2>
+          <div class="col-md-6 outputBoxes">
+            <form id="letterPuzzle">
+              <div class="form-group">
+                <input type="text" class="form-control" id="playerGuess" placeholder="Guess a Letter" autocomplete="off">
+              </div>
+              <button type="submit" class="btn btn-info" id="checkLetter">Check Letter</button>
+            </form>
+            <div class="user-answers">
+              <h2>Guess the 4 Letter Word</h2>
+              <p class="correct-answers"><span0>-</span0></p>
+              <p class="correct-answers"><span1>-</span1></p>
+              <p class="correct-answers"><span2>-</span2></p>
+              <p class="correct-answers"><span3>-</span3></p>
+            </div>
+            <div class="userIncorrect">
+              <h2 class="incorrect-answers">Wrong: <span5></span5></h2>
+            </div>
+            <div class="incorrectGuess">
+              <h2 class="incorrect">Guesses Left: <span4></span4></h2>
+            </div>
+          </div>
+          <div class="col-md-6 outputBoxes">
+            <div class="hang-man">
+              <p id="hangMan-images">
+                <p><img id="hangMan" src="img/hangman.png"></p>
+                <p><img id="bodyPart1" src="img/head.png"></p>
+                <p><img id="bodyPart2" src="img/body.png"></p>
+                <p><img id="bodyPart3" src="img/leftExtension.png"></p>
+                <p><img id="bodyPart4" src="img/rightExtension.png"></p>
+                <p><img id="bodyPart5" src="img/leftExtension.png"></p>
+                <p><img id="bodyPart6" src="img/rightExtension.png"></p>
+              </p>
+            </div>
+          </div>
+        </div> <!-- .row -->
+      </div>
+    </section>
     <section id="corgi">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/u_8LYsqmYa0" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <section id="suck" class="notShown">
+      <div class="suck">
+
+      </div>
     </section>
   </body>
 </html>

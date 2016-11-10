@@ -3,7 +3,7 @@ $(function(){
   var character = "josh";
   var name = "";
   var typeFast = 25;
-  scene4();
+  scene8();
   function intro() {
   	$('#nameStart').fadeIn(2000);
   	var timer = 1000;
@@ -40,7 +40,7 @@ $(function(){
   		});
   		timer+=1500;
   		$('#genderImages').delay(timer).fadeIn(1000);
-  		timer+=2000;
+  		timer+=3000;
   		$("#male").typed({
   			strings: ["male"],
   			typeSpeed: typeFast,
@@ -83,7 +83,7 @@ $(function(){
 
   function scene1() {
   	var wakeUpText = "<p>You wake up...^1000 mattress on the floor...^1000 exhausted from a long night of cross stitching and updating your Etsy account.^1000<br> You can feel the slight hangover from the mix of PBR and brown sugar maple whiskey you drank last night.^1000<br> The phone rings.^1000 It's your friend Harlow.</p>";
-  	var phoneText = "<p>Harlow: Hey, are you going to the show tonight?^1000<br> You've probably never heard of them,^1000 but it's an indie synth band from Iceland.^1000<br> Starts at 7:30 at 'Club Foot.'^1000 See you there!</p>"
+  	var phoneText = "<p>Harlow: " + name +", you're going to the show tonight, right?^1000<br> You've probably never heard of them,^1000 but it's an indie synth band from Iceland.^1000<br> Starts at 7:30 at 'Club Foot.'^1000 See you there!</p>"
   	var timer = 2000;
   	$('.'+character).delay(timer).fadeIn(1000);
   	$('#wakeUp').delay(timer).fadeIn(1000);
@@ -136,7 +136,7 @@ function scene2() {
 	});
 }
 
-
+//==================== Scene Three Function ==================
   function scene3() {
     var timer = 0;
     $('.riddle1Top').hide();
@@ -160,21 +160,14 @@ function scene2() {
     $('.scene3Text').delay(timer).fadeOut(1000);
     timer+=1000;
     $('.aiText').typed({
-      strings: ['Ai: Hey ' + name + '!^1000 Your book just came in.^1000 Real quick, while I\'ve got you; I was wondering if you could help me with a problem.'],
+      strings: ['Ai: Hey ' + name + '!^1000 Your book just came in.^1000 <em>On Sexes and Serfdom</em>^1000 good choice.^1000 Real quick, while I\'ve got you; I was wondering if you could help me with a problem.'],
       typeSpeed: typeFast,
       startDelay: timer,
       showCursor: false
     });
-    timer+=11000;
+    timer+=16000;
     $('.aiText').delay(timer).fadeOut(1000);
     timer+=2000;
-    $('.ai').delay(timer-8000).queue(function(next){
-      $(this).addClass('aiConfused');
-      next();
-    }).delay(1000).queue(function(next){
-      $(this).removeClass('aiConfused');
-      next();
-    });
     $('.riddle1Text').typed({
       strings: ['Michael, John, Tanya and Robert are putting together a synth-based indie band. They need a singer, a keyboard player, another keyboard player and someone to operate the drum machine. Tanya can play the keyboard and sing, Michael can sing and hit buttons, Robert can also hit buttons and play the keyboard, and John can kinda play keyboards. How do you arrange everyone for this to make any sense?'],
       typeSpeed: typeFast,
@@ -197,22 +190,14 @@ function scene2() {
     else {
       insertItem = "nothing";
       // protag.addItem(insertItem);
-      $('#puzzleOneOutput').typed({
-      strings: ["I don't think that will work..."],
-        typeSpeed: 20,
-        showCursor: false
-      });
+			var riddle1 = false;
      }
      if(riddle1) {
        $('.riddle1Top').fadeOut(1000);
        $('.riddle1Text').fadeOut(1000);
        $('.scene3Top').delay(1000).fadeIn(1000);
-       $('.ai').delay(1000).queue(function(next){
-         $(this).removeClass('aiConfused');
-         next();
-       });
        $('.riddle1ResponseText').typed({
-         strings: ['You\'re so right!!!^1000 I\'ll tell them that! Oh, before I forget, here\'s your book.^1000 <em>On Sexes and Serfdom</em> is one of my favorites!'],
+         strings: ['You\'re so right!!!^1000 I\'ll tell them that! Oh, I heard you were going to \'Club Foot\' tonight!.^1000 Apparently that used to be a huge <em>jazz</em> club.'],
          typeSpeed: typeFast,
          startDelay: 1000,
          showCursor: false
@@ -221,9 +206,29 @@ function scene2() {
          next();
        });
      }
+		 else {
+			 $('.riddle1Top').fadeOut(1000);
+       $('.riddle1Text').fadeOut(1000);
+       $('.scene3Top').delay(1000).fadeIn(1000);
+			 $('.ai').delay(2000).queue(function(next){
+	       $(this).addClass('aiConfused');
+	       next();
+	     });
+       $('.riddle1ResponseText').typed({
+         strings: ['Hmm...^1000 I don\'t know.^1000 That might work. ^1000 I\'ll suggest it to them.'],
+         typeSpeed: typeFast,
+         startDelay: 1000,
+         showCursor: false
+       }).delay(11000).queue(function(next) {
+         scene4();
+         next();
+       });
+		 }
    });
   }
 
+
+//==================== Scene Four Function ==================
   function scene4() {
     timer = 2000;
     $('#scene3').fadeOut(1000);
@@ -329,6 +334,7 @@ function scene2() {
   });
 }
 
+//==================== Scene Five Function ==================================
   function scene5() {
     timer = 1000;
     $('#scene4').fadeOut(1000);
@@ -378,7 +384,7 @@ function scene2() {
         $('.riddle2Text').fadeOut(1000);
         $('.scene5Top').delay(1000).fadeIn(1000);
         $('.riddle2ResponseText').typed({
-          strings: ['Congratulations!^1000 Yes, unfortunately no one knows the proper question to ask about life, the universe, and everything.^1000 Well, anyways, here\'s your fixie. It really does add to your vintage cred.^500<br> By the way, Harlow said you guys were going to \'Club Foot\' later. I heard that bouncer has been using a lot of J\'s and Z\'s lately.'],
+          strings: ['Congratulations!^1000 Yes, unfortunately no one knows the proper question to ask about life, the universe, and everything.^1000 Well, anyways, here\'s your fixie. It really does add to your vintage cred.^500 By the way, Harlow said you guys were going to \'Club Foot\' later. I heard they\'ve been playing a lot of J\'s and Z\'s lately.'],
           typeSpeed: typeFast,
           startDelay: 1000,
           showCursor: false
@@ -409,6 +415,8 @@ function scene2() {
 			}
     });
   }
+
+	//==================== Scene Six Function ==================================
     function scene6() {
       timer = 2000;
       $('#scene5').fadeOut(1000);
@@ -436,6 +444,7 @@ function scene2() {
       });
     }
 
+//==================== Scene Seven Function ==================================
   function scene7() {
     timer = 2000;
     $('#scene5').fadeOut(1000);
@@ -461,11 +470,11 @@ function scene2() {
     });
   }
 
+//==================== Scene Eight Function ==================================
 function scene8() {
     timer = 2000;
     $('#scene7').fadeOut(1000);
     $('#scene8').delay(timer).fadeIn(1000);
-    timer = 0;
 		$('.bouncer').delay(timer).fadeIn(1000);
     $('.scene8Text').typed({
       strings: ['Bouncer: Sorry, we\'re sold out of tickets.<br>^1000 You: But I know the bar guy!<br>^1000 Bouncer: Fine. If you can solve the hardest game of hang-man known to man, both hanged and not,^1000 only then will I let you in.'],
@@ -473,29 +482,89 @@ function scene8() {
       startDelay: timer,
       showCursor: false
     });
-		// ============================= Here =============================
-	//	==========================================================
-    timer+=5000;
-    $('.'+character).delay(1000).fadeIn(1000);
-    $('.bouncer').fadeIn(1000);
-    timer+=14000;
-    $('.scene8Text').delay(timer).fadeOut(1000);
-    $('.bouncer').delay(timer).fadeOut(1000);
-		$('.'+character).delay(1000).fadeOut(1000);
-    timer+=5000;
-    $('.finalShow').typed({
-      strings: ['You got into \'Club Foot\'!<br>^1000 Peering through the sea of plaid and well manicured beards,^500 the lights dim,^500 and you see the band come onstage...'],
-      typeSpeed: typeFast,
-      startDelay: timer,
-      showCursor: false
-    });
-    timer+=10000;
-    $('#scene8').delay(timer).fadeOut(1000);
-    timer+=4000;
-    $('#corgi').delay(timer).fadeIn(1000);
-    $('#corgi').queue(function(next){
-      return $(this).children()[0].src +="?autoplay=1";
-      next();
-    });
+		timer+=17000;
+		$('#scene8').delay(timer).fadeOut(1000);
+		timer+=3000;
+		$('#hangManPuzzle').delay(timer).fadeIn(1000);
+    hangMan();
   }
 });
+
+function hangMan() {
+	var hangman = ["J", "A", "Z", "Z"];
+	guessLetter	= function(letters) {
+		for(var index = 0; index < hangman.length; index++) {
+	 		if(letters === hangman[index]) {
+		 		return index;
+	 		}
+		}
+		return "Incorrect"
+	};
+  var winCount = 0;
+  // var loseCount = 0;
+  var outCome = "";
+  var pictureCycle = 1;
+  var guessesLeft = 6;
+  $(".incorrect span4").text(guessesLeft);
+  $("form#letterPuzzle").submit(function(event) {
+		event.preventDefault();
+		var letterGuess =  $("input#playerGuess").val().toUpperCase();
+		var guessResult = guessLetter(letterGuess);
+		for (var idx = 0; idx < 4; idx++) {
+			if (guessResult === idx) {
+				winCount++;
+				if(guessResult === 2) {
+					$(".correct-answers span3").text(letterGuess);
+				}
+				$(".correct-answers span" + idx).text(letterGuess);
+				$("input#playerGuess").val("");
+			}
+		}
+		if(winCount === 3) {
+			outCome = "win";
+		}
+		if (guessResult === "Incorrect") {
+			guessesLeft--;
+			$(".incorrect-answers span5").append(" " + letterGuess + " ");
+      $(".incorrect span4").text(guessesLeft);
+			$("#bodyPart" + pictureCycle).fadeIn(2000);
+			pictureCycle++;
+			$("input#playerGuess").val("");
+		}
+		if(guessesLeft === 0) {
+			outCome = "lose";
+		}
+		if(outCome === "win") {
+			$("#hangManPuzzle").fadeOut(1000);
+			$('#scene8').delay(1000).fadeIn(1000);
+			$('.scene8Text').delay(1000).fadeOut(1000);
+			timer=3000;
+			$('.finalShow').typed({
+				strings: ['You got into \'Club Foot\'!<br>^1000 Peering through the sea of plaid and well manicured beards,^500 the lights dim,^500 and you see the band come onstage...'],
+				typeSpeed: 20,//typeFast,
+				startDelay: timer,
+				showCursor: false
+			});
+			timer+=10000;
+			$('#scene8').delay(timer).fadeOut(1000);
+			timer+=4000;
+			$('#corgi').delay(timer).fadeIn(1000);
+			$('#corgi').queue(function(next){
+				return $(this).children()[0].src +="?autoplay=1";
+				next();
+			});
+		}
+		else if(outCome === "lose" ) {
+      //$("#hangManPuzzle").hide();
+			$("#hangManPuzzle").fadeOut(1000);
+			$('#scene8').fadeOut(1000);
+			$('#suck').fadeIn(1000);
+			$('.suck').typed({
+				strings: ['You didn\'t make it to the show...<br>^1000 bummer....'],
+				typeSpeed: 20,//typeFast,
+				startDelay: 3000,//timer,
+				showCursor: false
+			});
+		}
+  });
+};
