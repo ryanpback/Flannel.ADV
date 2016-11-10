@@ -21,7 +21,7 @@ _In a world, full of flannels, large beards, and microbrews one character must g
 _Clone the repository,_
 _open the index.html file,_
 _OR_
-_just visit [here](https://meichsteadt.github.io/superAdventureTime)_
+_just visit [here](https://ryanpback.github.io/superAdventureTime)_
 
 ## Known Bugs
 
