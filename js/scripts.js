@@ -509,18 +509,23 @@ function hangMan() {
   $("form#letterPuzzle").submit(function(event) {
 		event.preventDefault();
 		var letterGuess =  $("input#playerGuess").val().toUpperCase();
-		var guessResult = guessLetter(letterGuess);
-		for (var idx = 0; idx < 4; idx++) {
-			if (guessResult === idx) {
-				winCount++;
-        hangman[idx] = "";
-				if(guessResult === 2) {
-					$(".correct-answers span3").text(letterGuess);
-				}
-				$(".correct-answers span" + idx).text(letterGuess);
-				$("input#playerGuess").val("");
-			}
-		}
+    if (letterGuess === "")  {
+
+    }
+    else {
+      var guessResult = guessLetter(letterGuess);
+  		for (var idx = 0; idx < 4; idx++) {
+        if (guessResult === idx) {
+  				winCount++;
+          hangman[idx] = "";
+  				if(guessResult === 2) {
+  					$(".correct-answers span3").text(letterGuess);
+  				}
+  				$(".correct-answers span" + idx).text(letterGuess);
+  				$("input#playerGuess").val("");
+  			}
+  		}
+    }
 		if(winCount === 3) {
 			outCome = "win";
 		}
