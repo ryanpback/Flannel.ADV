@@ -3,7 +3,7 @@ $(function(){
   var character = "josh";
   var name = "";
   var typeFast = 25;
-  scene8();
+  intro();
   function intro() {
   	$('#nameStart').fadeIn(2000);
   	var timer = 1000;
