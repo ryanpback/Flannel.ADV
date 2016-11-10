@@ -3,7 +3,7 @@ $(function(){
   var character = "josh";
   var name = "";
   var typeFast = 25;
-  intro();
+  scene8();
   function intro() {
   	$('#nameStart').fadeIn(2000);
   	var timer = 1000;
@@ -537,7 +537,7 @@ function hangMan() {
 		}
 		if(outCome === "win") {
       timer=2000;
-			$("#hangManPuzzle").delay(1000)fadeOut(1000);
+			$("#hangManPuzzle").delay(1000).fadeOut(1000);
 			$('#scene8').delay(timer).fadeIn(1000);
 			$('.scene8Text').delay(timer).fadeOut(1000);
       timer+=2000;
