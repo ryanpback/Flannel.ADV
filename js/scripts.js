@@ -3,7 +3,7 @@ $(function(){
   var character = "josh";
   var name = "";
   var typeFast = 25;
-  intro();
+  scene8();
   function intro() {
   	$('#nameStart').fadeIn(2000);
   	var timer = 1000;
@@ -513,6 +513,7 @@ function hangMan() {
 		for (var idx = 0; idx < 4; idx++) {
 			if (guessResult === idx) {
 				winCount++;
+        hangman.splice(idx,1);
 				if(guessResult === 2) {
 					$(".correct-answers span3").text(letterGuess);
 				}
