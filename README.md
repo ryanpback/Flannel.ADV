@@ -1,8 +1,8 @@
-# _Ping Pong_
+# _Adventures in Flannel_
 
 _This application will take an a user on a magical, hipster based adventure._
 
-_**Matt Eichsteadt**_
+_**Matt Eichsteadt, Luke Keysboe, Ryan Back, Skye Atwood**_
 
 ## Description
 
