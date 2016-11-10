@@ -134,6 +134,12 @@ button:hover {
   background-image: url("../img/bigJosh.png");
   display: none;
 }
+.joshNormal {
+  width: 165px;
+  height: 385px;
+  bottom: 0;
+  background-position: -1165px 0;
+}
 
 .joshFight {
   width: 215px;
@@ -145,15 +151,8 @@ button:hover {
 .joshPhone {
   width: 187px;
   height: 385px;
-  bottom: 0;
+  bottom: -5px;
   background-position: -815px -390px;
-}
-
-.joshNormal {
-  width: 165px;
-  height: 385px;
-  bottom: 0;
-  background-position: -1165px 0;
 }
 
 .joshBike {
@@ -202,6 +201,7 @@ button:hover {
   width: 220px;
   height: 385px;
   background-position: -280px 0;
+  bottom: -3px;
 }
 
 .misakiRight {
@@ -423,4 +423,12 @@ button:hover {
   margin-bottom: 30px;
   margin-left: 30px;
   font-size: 30px;
+}
+
+#corgi {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
