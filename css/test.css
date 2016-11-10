@@ -1,29 +1,151 @@
-#wakeUp {
-  display: block;
+body {
+  background-color: black;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: #fff;
 }
 
-#outside {
+#nameStart{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-left: -50%;
+  text-align: center;
+  display: none;
+  padding-bottom: 20px;
+}
+
+#clickStart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -50%;
+  text-align: center;
   display: none;
 }
+
+#clickStart h2 {
+  transform: translate(0, -50%);
+  margin-top: 0;
+}
+
+#nameStart h1 {
+  transform: translate(0, -50%);
+}
+.jumbotron {
+  background-color: transparent;
+  color:#fff;
+  letter-spacing: 15px;
+  margin-bottom: 20px;
+}
+
+i {
+  transform: translate(0, 10%);
+}
+
+.introText {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  min-height: 324px;
+  transform: translate(-50%,0);
+  display: none;
+  font-size: 36px;
+}
+
+.box {
+  border: 5px solid #fff;
+}
+
+#story .col-xs-12 {
+  padding: 30px;
+  line-height: 40px;
+}
+
+input {
+  background-color: #000;
+}
+
+input:focus {
+    outline-color: #fff;
+}
+
+button {
+  background-color: #000;
+  outline-color: #fff;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#genderImages {
+  margin-bottom: 30px;
+}
+
+.male, .female {
+  margin: 10px 25px;
+}
+
+.male {
+  width: 50px;
+  height: 115px;
+  background: url('../img/josh.png') -1518px -423px;
+  margin-top: 20px;
+}
+
+.female {
+  width: 50px;
+  height: 130px;
+  background: url('../img/misaki.png') -505px -810px
+}
+
+.outline {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: inline-block;
+  height: 160px;
+}
+
+.outline:hover {
+  background-color: rgba(255,255,255,.2);
+  cursor: pointer;
+}
+
+#male, #female {
+  position: absolute;
+  top: 210px;
+}
+
+#male {
+  margin-left: -30px;
+}
+
+#female {
+  margin-left: -44px;
+}
+
+
+/*============================ Character Imgs ====================================*/
 
 .josh {
   position: absolute;
   right:200px;
   background-image: url("../img/bigJosh.png");
-  display: block;
+  display: none;
 }
 
 .joshFight {
   width: 215px;
   height: 385px;
-  bottom: -10px;
+  bottom: 0;
   background-position: -335px 0;
 }
 
 .joshPhone {
   width: 187px;
   height: 385px;
-  bottom: -15px;
+  bottom: 0;
   background-position: -815px -390px;
 }
 
@@ -56,12 +178,12 @@
   right:200px;
   background-image: url('../img/misakiBig.png');
   display: none;
+  bottom: 0;
 }
 
 .misakiPhone {
   width:180px;
   height:385px;
-  bottom: -10px;
   background-position: -1270px 0;
 }
 
@@ -69,32 +191,37 @@
   width: 191px;
   height: 385px;
   background-position: -1077px 0;
-  bottom: -10px;
 }
 .misakiFight {
   width: 207px;
   height: 385px;
   background-position: -493px 0;
-  bottom: -10px;
 }
 
 .misakiBike {
   width: 220px;
   height: 385px;
   background-position: -280px 0;
-  bottom: -13px;
+}
+
+.misakiRight {
+  position: absolute;
+  left: 200px;
+  width: 183px;
+  height: 385px;
+  background-image: url('../img/misakiRight.png');
+  background-position: -167px -382px;
 }
 
 .otherChar {
   position: absolute;
   left:100px;
-  /*display: block;*/
 }
 
 .harlow {
   width: 225px;
   height: 450px;
-  bottom: -36px;
+  bottom: -35px;
   background-image: url("../img/harlow.png");
   background-position: -210px -450px;
   transform: scale(.85);
@@ -111,7 +238,7 @@
 .bum {
   width: 196px;
   height: 472px;
-  bottom: -36px;
+  bottom: -35px;
   background-image: url("../img/bum.png");
   background-position: 0;
   transform: scale(.85);
@@ -123,7 +250,7 @@
   background-position: 0;
   background-image: url("../img/bikeGuy.png");
   transform: scale(.85);
-  bottom: -36px;
+  bottom: -35px;
 }
 
 .ai {
@@ -187,8 +314,13 @@
   left: 50%;
   transform: translate(-50%,0);
 }
-
+/*============================ Backgrounds ====================================*/
 .wakeUpTop {
+  background: url('../img/bedroom.png');
+  background-position:  0;
+}
+
+.scene2Top {
   background: url('../img/train.gif');
   background-position:  0;
 }
@@ -262,6 +394,8 @@
 .notShown {
   display: none;
 }
+
+/*============================ Puzzle Styles ====================================*/
 
 #puzzleTwoSubmit, #puzzleOneSubmit, #reactButton {
   background-color: transparent;

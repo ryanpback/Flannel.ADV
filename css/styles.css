@@ -411,7 +411,7 @@ input[type="radio"]:checked + label {
   border: 2px solid #fff;
 }
 
-#puzzleTwoSubmit, #puzzleOneSubmit, #reactButton {
+#puzzleTwoSubmit, #puzzleOneSubmit, #reactButton, #checkLetter {
   background-color: transparent;
   font-size: 20px;
   border-color: cyan;
