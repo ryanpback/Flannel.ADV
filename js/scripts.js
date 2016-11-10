@@ -160,7 +160,7 @@ function scene2() {
     $('.scene3Text').delay(timer).fadeOut(1000);
     timer+=1000;
     $('.aiText').typed({
-      strings: ['Ai: Hey ' + name + '!^1000 Your book just came in.^1000 <em>On Sexes and Serfdom</em>^1000 good choice.^1000 Real quick, while I\'ve got you; I was wondering if you could help me with a problem.'],
+      strings: ['Ai: Hey ' + name + '!^1000 Your book just came in.^1000 <em>On Sexes and Serfdom</em>,^1000 good choice.^1000 Real quick, while I\'ve got you; I was wondering if you could help me with a problem.'],
       typeSpeed: typeFast,
       startDelay: timer,
       showCursor: false
@@ -536,10 +536,11 @@ function hangMan() {
 			outCome = "lose";
 		}
 		if(outCome === "win") {
-			$("#hangManPuzzle").fadeOut(1000);
-			$('#scene8').delay(1000).fadeIn(1000);
-			$('.scene8Text').delay(1000).fadeOut(1000);
-			timer=3000;
+      timer=2000;
+			$("#hangManPuzzle").delay(1000)fadeOut(1000);
+			$('#scene8').delay(timer).fadeIn(1000);
+			$('.scene8Text').delay(timer).fadeOut(1000);
+      timer+=2000;
 			$('.finalShow').typed({
 				strings: ['You got into \'Club Foot\'!<br>^1000 Peering through the sea of plaid and well manicured beards,^500 the lights dim,^500 and you see the band come onstage...'],
 				typeSpeed: 20,//typeFast,
