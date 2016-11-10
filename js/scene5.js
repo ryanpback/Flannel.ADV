@@ -33,4 +33,28 @@ $(function() {
   timer+=1000
   $('.riddle2Top').delay(timer).fadeIn(1000);
   //$('#scene5').delay(timer).fadeOut(1000);
+  $("#puzzleTwoSubmit").click(function(event) {
+    event.preventDefault();
+    var puzzleAnswer2 = "B";
+    var meaningOflife = $("input:radio[name=secondPuzzle]:checked").val();
+    if(meaningOflife === puzzleAnswer2) {
+      insertItem = "Fixie-bike"
+      // protag.addItem(insertItem);
+      $('#puzzleTwoOutput').typed({
+      strings: ["You are correct"],
+      typeSpeed: 20,
+      showCursor: false
+      });
+    }
+    else {
+      insertItem = "nothing";
+      // protag.addItem(insertItem);
+      $('#puzzleTwoOutput').typed({
+      strings: ["You are incorrect"],
+      typeSpeed: 20,
+      showCursor: false
+      });
+    }
+  });
+ //$('#scene5').delay(timer).fadeOut(1000);
 });
