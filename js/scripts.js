@@ -277,7 +277,7 @@ function scene2() {
 		}
 		else if (reactAnswer === "B") {
 			$('.userResponses').typed({
-			strings: [name + "^1000: *Kicks him in the chin and runs! <br>"],
+			strings: [name + "^1000: *Kicks him in the shin and runs! <br>"],
 				typeSpeed: 20,
 				startDelay: 2000,
 				showCursor: false
