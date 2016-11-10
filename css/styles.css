@@ -125,11 +125,20 @@ button:hover {
   margin-left: -44px;
 }
 
+
+/*============================ Character Imgs ====================================*/
+
 .josh {
   position: absolute;
   right:200px;
   background-image: url("../img/bigJosh.png");
   display: none;
+}
+.joshNormal {
+  width: 165px;
+  height: 385px;
+  bottom: 0;
+  background-position: -1165px 0;
 }
 
 .joshFight {
@@ -144,13 +153,6 @@ button:hover {
   height: 385px;
   bottom: -5px;
   background-position: -815px -390px;
-}
-
-.joshNormal {
-  width: 165px;
-  height: 385px;
-  bottom: 0;
-  background-position: -1165px 0;
 }
 
 .joshBike {
@@ -169,38 +171,47 @@ button:hover {
   background-position: -155px -386px;
 }
 
+
 .misaki {
   position: absolute;
   right:200px;
   background-image: url('../img/misakiBig.png');
   display: none;
-}
-
-.misakiPhone {
-  width:180px;
-  height:385px;
   bottom: 0;
-  background-position: -1270px 0;
 }
 
 .misakiNormal {
   width: 191px;
   height: 385px;
   background-position: -1077px 0;
-  bottom: 0;
 }
+
+.misakiPhone {
+  width:180px;
+  height:385px;
+  background-position: -1270px 0;
+}
+
 .misakiFight {
   width: 207px;
   height: 385px;
   background-position: -493px 0;
-  bottom: -10px;
 }
 
 .misakiBike {
   width: 220px;
   height: 385px;
   background-position: -280px 0;
-  bottom: -13px;
+  bottom: -3px;
+}
+
+.misakiRight {
+  position: absolute;
+  left: 200px;
+  width: 183px;
+  height: 385px;
+  background-image: url('../img/misakiRight.png');
+  background-position: -167px -382px;
 }
 
 .otherChar {
@@ -212,16 +223,24 @@ button:hover {
 .harlow {
   width: 225px;
   height: 450px;
-  bottom: -36px;
+  bottom: -35px;
   background-image: url("../img/harlow.png");
   background-position: -210px -450px;
+  transform: scale(.85);
+}
+
+.harlowCity {
+  width: 238px;
+  height: 450px;
+  bottom: -32px;
+  background-position: -433px -450px;
   transform: scale(.85);
 }
 
 .bum {
   width: 196px;
   height: 472px;
-  bottom: -36px;
+  bottom: -35px;
   background-image: url("../img/bum.png");
   background-position: 0;
   transform: scale(.85);
@@ -233,7 +252,7 @@ button:hover {
   background-position: 0;
   background-image: url("../img/bikeGuy.png");
   transform: scale(.85);
-  bottom: -36px;
+  bottom: -35px;
 }
 
 .ai {
@@ -297,7 +316,7 @@ button:hover {
   left: 50%;
   transform: translate(-50%,0);
 }
-
+/*============================ Backgrounds ====================================*/
 .wakeUpTop {
   background: url('../img/bedroom.png');
   background-position:  0;
@@ -316,12 +335,42 @@ button:hover {
 .scene3Top {
   background: url('../img/apple.jpg');
   background-position:  0 -500px;
-  display: block;
 }
 
 .riddle1Top {
   background-color: #000;
   display: none;
+}
+
+.scene4Top {
+  background: url('../img/trainOutside.gif');
+}
+
+.scene4Bottom {
+  display: none;
+  line-height: 25px;
+}
+
+.scene5Top {
+  background: url('../img/outside.gif');
+  background-position: 0 -800px;
+}
+
+.scene6Top {
+  background: url('../img/outside.gif');
+  background-position: 0 -800px;
+}
+
+.scene7Top {
+  background: url('../img/city.gif');
+  background-position: 0 -1200px;
+  display: block;
+}
+
+.scene8Top {
+  background: url('../img/bar.gif');
+  background-position: 0 -500px;
+  display: block;
 }
 
 .top {
@@ -347,6 +396,61 @@ button:hover {
 .notShown {
   display: none;
 }
+
+/*============================ Puzzle Styles ====================================*/
+
+#puzzleTwoSubmit, #puzzleOneSubmit, #reactButton {
+  background-color: transparent;
+  font-size: 20px;
+  border-color: cyan;
+  border-radius: 50px;
+  box-shadow: 2px 2px 2px #fff;
+  margin-left: 50px;
+}
+
+#puzzleTwoOutput {
+  margin-top: 30px;
+  margin-left: 50px;
+  font-size: 26px;
+}
+
+.mid-radio {
+  margin-bottom: 30px;
+  margin-left: 30px;
+  font-size: 30px;
+}
+
+.top-radio {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  font-size: 30px;
+}
+
+.riddle1Top {
+  padding-bottom: 30px;
+}
+.radio input{
+  visibility: hidden;
+}
+
+.radio label:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+input[type="radio"]:checked + label {
+  border: 2px solid #fff;
+}
+
+#corgi {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
 .element, .element p {
   display: inline;
   font-size: 36px;
@@ -383,58 +487,4 @@ button:hover {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
-}
-
-.skip {
-  display: none;
-}
-
-.show {
-  display: default;
-}
-
-/*Ryan Luke CSS*/
-
-.riddle1Top {
-  padding-bottom: 30px;
-}
-.radio input{
-  visibility: hidden;
-}
-
-.radio label:hover {
-  text-decoration: underline;
-  text-decoration-color: white;
-}
-
-input[type="radio"]:checked + label {
-  border: 2px solid #fff;
-}
-
-#puzzleTwoSubmit, #puzzleOneSubmit, #reactButton, #checkLetter {
-  background-color: transparent;
-  font-size: 20px;
-  border-color: cyan;
-  border-radius: 50px;
-  box-shadow: 2px 2px 2px #fff;
-  margin-left: 50px;
-}
-
-#puzzleOneOutput {
-  margin-top: 30px;
-  margin-left: 50px;
-  font-size: 26px;
-}
-
-.mid-radio {
-  margin-bottom: 30px;
-  margin-left: 30px;
-  font-size: 30px;
-}
-
-.top-radio {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 30px;
-  font-size: 30px;
 }

@@ -16,12 +16,12 @@
       <div class="row">
         <div id="nameStart" class="col-xs-12">
           <div class="jumbotron text-center">
-            <h1>Super Adventure Time</h1>
+            <h1>Adventures In Flannel</h1>
           </div>
         </div>
         <div id="clickStart" class="col-xs-12">
           <div class="jumbotron text-center">
-            <h2><i class="fa fa-angle-right"></i>click anywhere to start</h2>
+            <h2><i class="typed-cursor fa fa-angle-right"></i>click anywhere to start</h2>
           </div>
         </div>
       </div>
@@ -133,7 +133,7 @@
           <div class="row">
             <div class="col-xs-12 top scene3Top">
                 <div class="josh joshNormal"></div>
-                <div class="misaki misakiRight"></div>
+                <div class="misaki misakiNormal"></div>
                 <div class="otherChar ai"></div>
             </div>
             <div class="col-xs-12 top riddle1Top">
@@ -166,19 +166,173 @@
               <div class="scene3Text element wrap"></div>
               <div class="aiText element wrap"></div>
               <div class="riddle1Text element wrap"></div>
+              <div class="riddle1ResponseText element wrap"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="youSuck" class="notShown">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 text-center">
-            <p>Wow.... You suck</p>
+    <section id="scene4" class="notShown">
+      <div class="picture box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 top scene4Top">
+                <div class="josh joshNormal"></div>
+                <div class="misaki misakiNormal"></div>
+                <div class="otherChar bum"></div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="storyLine box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="scene4Text element wrap"></div>
+              <div class="bumText element wrap"></div>
+              <div class="riddle1Text element wrap"></div>
+              <div class="userResponses"></div>
+              <div class="bumResponses"></div>
+              <div class="hint"></div>
+            </div>
+            <div class="col-xs-12 scene4Bottom">
+              <div class="radio top-radio statementResponses">
+                  <input id="statement1" type="radio" name="statements" value="A">
+                  <label for="statement1">Tell him to get lost</label>
+              </div>
+              <div class="radio mid-radio statementResponses">
+                  <input id="statement2" type="radio" name="statements" value="B">
+                  <label for="statement2">Kick him in the chin and run!</label>
+              </div>
+              <div class="radio mid-radio statementResponses">
+                  <input id="statement3" type="radio" name="statements" value="C">
+                  <label for="statement3">Give him the locally sourced vegan, soy-free brownie you were saving for the show</label>
+              </div>
+              <div class="radio mid-radio statementResponses">
+                  <input id="statement4" type="radio" name="statements" value="D">
+                  <label for="statement4">Threaten to pull out a vinyl record and slit his throat</label>
+              </div>
+              <button type="button" class="btn btn-info" id="reactButton">React!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="scene5" class="notShown">
+      <div class="picture box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 top scene5Top">
+                <div class="josh joshNormal"></div>
+                <div class="misaki misakiNormal"></div>
+                <div class="otherChar bikeGuy"></div>
+            </div>
+            <div class="col-xs-12 top riddle2Top">
+              <div class="radio top-radio">
+                  <input id="question5" type="radio" name="secondPuzzle" value="A">
+                  <label for="question5">A: Why is the sky blue?</label>
+              </div>
+              <div class="radio mid-radio">
+                  <input id="question6" type="radio" name="secondPuzzle" value="B">
+                  <label for="question6">B: Nobody Knows...</label>
+              </div>
+              <div class="radio mid-radio">
+                  <input id="question7" type="radio" name="secondPuzzle" value="C">
+                  <label for="question7">C: What is the square root of 42?</label>
+              </div>
+              <div class="radio mid-radio">
+                  <input id="question8" type="radio" name="secondPuzzle" value="D">
+                  <label for="question8">D: Can you believe who won the election?!</label>
+              </div>
+              <button type="button" class="btn btn-info" id="puzzleTwoSubmit">Answer!</button>
+              <p id="puzzleTwoOutput"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="storyLine box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="scene5Text element wrap"></div>
+              <div class="riddle2Text element wrap"></div>
+              <div class="riddle2ResponseText element wrap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="scene6" class="notShown">
+      <div class="picture box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 top scene6Top">
+                <div class="josh joshNormal"></div>
+                <div class="misaki misakiNormal"></div>
+                <div class="otherChar veganPoser"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="storyLine box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="scene6Text element wrap"></div>
+              <div class="veganText element wrap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="scene7" class="notShown">
+      <div class="picture box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 top scene7Top">
+                <div class="josh joshNormal"></div>
+                <div class="misaki misakiNormal"></div>
+                <div class="otherChar harlow harlowCity"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="storyLine box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="scene7Text element wrap"></div>
+              <div class="meetHarlow element wrap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="scene8" class="notShown">
+      <div class="picture box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 top scene8Top">
+                <div class="josh joshNormal"></div>
+                <div class="misaki misakiNormal"></div>
+                <div class="otherChar bouncer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="storyLine box">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="scene8Text element wrap"></div>
+              <div class="finalShow element wrap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="corgi">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/u_8LYsqmYa0" frameborder="0" allowfullscreen></iframe>
     </section>
   </body>
 </html>
