@@ -3,7 +3,7 @@ $(function(){
   var character = "josh";
   var name = "";
   var typeFast = 25;
-  scene8();
+  intro();
   function intro() {
   	$('#nameStart').fadeIn(2000);
   	var timer = 1000;
@@ -25,7 +25,7 @@ $(function(){
   		timer+=4000;
   		$('#characterSelect').delay(timer).fadeIn(1000);
   	});
-  	$('body').on('submit', 'form',function(event) {
+  	$('body').on('submit', 'form#genderForm',function(event) {
   		timer = 1000;
   		event.preventDefault();
   		name = $('input#name').val();
